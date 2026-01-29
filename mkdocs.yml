@@ -1,0 +1,411 @@
+# ============================================
+# MADEFORAI - Modern AI/LLM Learning Platform
+# MkDocs Material Configuration - 2026 Edition
+# ============================================
+
+site_name: MadeForAI
+site_url: https://madeforai.github.io/madeforai/
+site_author: MadeForAI Team
+site_description: >-
+  Master AI, LLMs, and Generative AI with hands-on Jupyter notebooks,
+  interactive tutorials, and a thriving community. From fundamentals to 
+  advanced techniques - your complete AI learning journey starts here.
+
+# Repository
+repo_name: madeforai/madeforai
+repo_url: https://github.com/madeforai/madeforai
+edit_uri: edit/main/docs/
+
+# Copyright
+copyright: >
+  Copyright &copy; 2026 MadeForAI · 
+  Made with ❤️ for the AI Community ·
+  <a href="#__consent">Cookie Settings</a>
+
+# ============================================
+# THEME CONFIGURATION - Material Design 2026
+# ============================================
+theme:
+  name: material
+  custom_dir: overrides
+  language: en
+  
+  # Favicon and Logo
+  favicon: assets/images/favicon.png
+  logo: assets/images/logo.svg
+  
+  # Color Palette - 2026 Modern AI Theme
+  # Primary: Deep Cyber Violet (AI/Tech aesthetic)
+  # Accent: Electric Cyan (Interactive elements)
+  palette:
+    # Light mode (default) - Cloud Dancer inspired
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo  # Deep violet
+      accent: cyan
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    
+    # Dark mode - Cyber aesthetic
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo  # Neon accents
+      accent: cyan
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  
+  # Typography - Modern 2026
+  font:
+    text: Inter
+    code: JetBrains Mono
+  
+  # Features - Everything modern and accessible
+  features:
+    # Navigation
+    - navigation.instant        # Instant loading (SPA-like)
+    - navigation.instant.progress  # Progress indicator
+    - navigation.tracking       # Anchor tracking
+    - navigation.tabs          # Top-level tabs
+    - navigation.tabs.sticky   # Sticky tabs
+    - navigation.sections      # Section index pages
+    - navigation.expand        # Expand all sections
+    - navigation.path          # Breadcrumb path
+    - navigation.indexes       # Section index pages
+    - navigation.top           # Back to top button
+    - navigation.footer        # Previous/next navigation
+    
+    # Table of Contents
+    - toc.follow               # Follow scroll
+    - toc.integrate            # Integrate in navigation
+    
+    # Search
+    - search.suggest           # Search suggestions
+    - search.highlight         # Highlight search terms
+    - search.share             # Share search results
+    
+    # Header
+    - header.autohide          # Auto-hide header on scroll
+    
+    # Content
+    - content.tabs.link        # Link content tabs
+    - content.code.copy        # Copy code button
+    - content.code.select      # Select code block
+    - content.code.annotate    # Code annotations
+    - content.tooltips         # Improved tooltips
+    - content.action.edit      # Edit button
+    - content.action.view      # View source button
+  
+  # Icons
+  icon:
+    repo: fontawesome/brands/github
+    edit: material/pencil
+    view: material/eye
+    logo: material/brain
+    admonition:
+      note: octicons/tag-16
+      abstract: octicons/checklist-16
+      info: octicons/info-16
+      tip: octicons/squirrel-16
+      success: octicons/check-16
+      question: octicons/question-16
+      warning: octicons/alert-16
+      failure: octicons/x-circle-16
+      danger: octicons/zap-16
+      bug: octicons/bug-16
+      example: octicons/beaker-16
+      quote: octicons/quote-16
+
+# ============================================
+# PLUGINS - Modern Functionality
+# ============================================
+plugins:
+  # Search with advanced features
+  - search:
+      lang: en
+      separator: '[\s\-,:!=\[\]()"/]+|(?!\b)(?=[A-Z][a-z])|\.(?!\d)|&[lg]t;'
+      pipeline:
+        - stemmer
+        - stopWordFilter
+        - trimmer
+  
+  # Jupyter notebook integration
+  - mkdocs-jupyter:
+      execute: false  # Don't execute by default (set true for auto-run)
+      include_source: true  # Include download link
+      theme: dark  # Dark theme for code cells
+      allow_errors: false
+      ignore_h1_titles: false
+      include_requirejs: true
+      show_input: true
+      no_input: false
+      remove_tag_config:
+        remove_cell_tags:
+          - hide
+          - remove_cell
+        remove_input_tags:
+          - hide_input
+        remove_all_outputs_tags:
+          - hide_output
+  
+  # Tags for content organization
+  - tags:
+      tags_file: tags.md
+  
+  # Social cards generation
+  - social:
+      cards: true
+      cards_layout_options:
+        background_color: "#6366F1"  # Brand violet
+        color: "#FFFFFF"
+  
+  # Git revision date
+  - git-revision-date-localized:
+      enable_creation_date: true
+      type: timeago
+  
+  # Minification for performance
+  - minify:
+      minify_html: true
+      minify_js: true
+      minify_css: true
+      htmlmin_opts:
+        remove_comments: true
+      js_files:
+        - javascripts/extra.js
+      css_files:
+        - stylesheets/extra.css
+
+# ============================================
+# MARKDOWN EXTENSIONS - Rich Content
+# ============================================
+markdown_extensions:
+  # Python Markdown
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+      permalink_title: Anchor link to this section
+      toc_depth: 3
+  
+  # PyMdown Extensions
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+      use_pygments: true
+      auto_title: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.snippets:
+      auto_append:
+        - includes/abbreviations.md
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+      combine_header_slug: true
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
+  - pymdownx.tasklist:
+      custom_checkbox: true
+      clickable_checkbox: true
+  - pymdownx.tilde
+  - pymdownx.critic
+
+# ============================================
+# EXTRA CSS & JAVASCRIPT
+# ============================================
+extra_css:
+  - stylesheets/extra.css
+  - stylesheets/animations.css
+  - stylesheets/notebook.css
+  - https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css
+
+extra_javascript:
+  - javascripts/extra.js
+  - javascripts/animations.js
+  - javascripts/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+# ============================================
+# EXTRA CONFIGURATION
+# ============================================
+extra:
+  # Analytics
+  analytics:
+    provider: google
+    property: G-XXXXXXXXXX  # Replace with your GA4 ID
+    feedback:
+      title: Was this page helpful?
+      ratings:
+        - icon: material/emoticon-happy-outline
+          name: This page was helpful
+          data: 1
+          note: Thanks for your feedback!
+        - icon: material/emoticon-sad-outline
+          name: This page could be improved
+          data: 0
+          note: Thanks! Help us improve by sharing your feedback
+  
+  # Social links
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/madeforai/madeforai
+      name: GitHub Repository
+    - icon: fontawesome/brands/discord
+      link: https://discord.gg/madeforai  # Replace with actual invite
+      name: Join our Discord
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/madeforai
+      name: Follow us on Twitter
+    - icon: fontawesome/brands/linkedin
+      link: https://linkedin.com/company/madeforai
+      name: Connect on LinkedIn
+    - icon: fontawesome/solid/envelope
+      link: mailto:2796gaurav@gmail.com
+      name: Email us
+  
+  # Announcement bar
+  announcement:
+    text: >
+      🚀 New Course: Advanced RAG Techniques - 
+      <a href="/courses/advanced-rag/">Start Learning</a>
+  
+  # Generator notice
+  generator: false
+  
+  # Consent (GDPR)
+  consent:
+    title: Cookie consent
+    description: >
+      We use cookies to recognize your repeated visits and preferences, as well
+      as to measure the effectiveness of our documentation and whether users
+      find what they're searching for. With your consent, you're helping us to
+      make our documentation better.
+    actions:
+      - accept
+      - reject
+      - manage
+  
+  # Version selector (for future)
+  version:
+    provider: mike
+    default: latest
+
+# ============================================
+# NAVIGATION STRUCTURE
+# ============================================
+nav:
+  - Home: index.md
+  
+  - Getting Started:
+    - Introduction: getting-started/index.md
+    - Installation Guide: getting-started/installation.md
+    - Quick Start: getting-started/quickstart.md
+    - Learning Path: getting-started/learning-path.md
+  
+  - Fundamentals:
+    - fundamentals/index.md
+    - Python Essentials: fundamentals/python-essentials.ipynb
+    - NumPy & Pandas: fundamentals/numpy-pandas.ipynb
+    - Data Visualization: fundamentals/data-visualization.ipynb
+  
+  - Machine Learning Basics:
+    - ml-basics/index.md
+    - Introduction to ML: ml-basics/intro-ml.ipynb
+    - Supervised Learning: ml-basics/supervised-learning.ipynb
+    - Unsupervised Learning: ml-basics/unsupervised-learning.ipynb
+    - Model Evaluation: ml-basics/model-evaluation.ipynb
+  
+  - Deep Learning:
+    - deep-learning/index.md
+    - Neural Networks: deep-learning/neural-networks.ipynb
+    - CNNs: deep-learning/cnns.ipynb
+    - RNNs & LSTMs: deep-learning/rnns-lstms.ipynb
+    - Transformers: deep-learning/transformers.ipynb
+  
+  - Large Language Models:
+    - llms/index.md
+    - LLM Fundamentals: llms/fundamentals.ipynb
+    - Prompt Engineering: llms/prompt-engineering.ipynb
+    - Fine-tuning: llms/fine-tuning.ipynb
+    - RAG Systems: llms/rag-systems.ipynb
+  
+  - Generative AI:
+    - genai/index.md
+    - Text Generation: genai/text-generation.ipynb
+    - Image Generation: genai/image-generation.ipynb
+    - Multimodal Models: genai/multimodal.ipynb
+    - Agent Systems: genai/agents.ipynb
+  
+  - Advanced Topics:
+    - advanced/index.md
+    - Model Optimization: advanced/optimization.ipynb
+    - Distributed Training: advanced/distributed-training.ipynb
+    - Production Deployment: advanced/deployment.ipynb
+    - MLOps: advanced/mlops.ipynb
+  
+  - Projects:
+    - projects/index.md
+    - Chatbot: projects/chatbot.ipynb
+    - Image Classifier: projects/image-classifier.ipynb
+    - Sentiment Analysis: projects/sentiment-analysis.ipynb
+    - Recommendation System: projects/recommender.ipynb
+  
+  - Resources:
+    - resources/index.md
+    - Cheat Sheets: resources/cheat-sheets.md
+    - Tools & Libraries: resources/tools.md
+    - Datasets: resources/datasets.md
+    - Research Papers: resources/papers.md
+  
+  - Community:
+    - community/index.md
+    - Discord Server: community/discord.md
+    - Contributing: community/contributing.md
+    - Code of Conduct: community/code-of-conduct.md
+  
+  - Blog:
+    - blog/index.md
+  
+  - Tags: tags.md
+
+# ============================================
+# HOOKS & CUSTOM CONFIGURATION
+# ============================================
+hooks:
+  - hooks/on_page_markdown.py
+
+# Validation
+validation:
+  nav:
+    omitted_files: warn
+    not_found: warn
+    absolute_links: warn
+  links:
+    not_found: warn
+    absolute_links: warn
+    unrecognized_links: warn
