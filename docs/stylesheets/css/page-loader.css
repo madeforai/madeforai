@@ -1,0 +1,23 @@
+/* Page Loader Styles - REMOVED FOR PERFORMANCE */
+/* No loader needed - instant page transitions for better UX */
+
+/* Smooth page transitions only */
+.md-content {
+    animation: fadeIn 0.15s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .md-content {
+        animation: none !important;
+    }
+}

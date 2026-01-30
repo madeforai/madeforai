@@ -1,0 +1,1463 @@
+/* Custom styling for MadeForAI - OPTIMIZED */
+
+/* Hide git revision date timestamps and icons - COMPREHENSIVE */
+.md-source-date,
+.md-source-date__source,
+time[datetime],
+.git-revision-date-localized-plugin-timeago,
+.git-revision-date-localized-plugin-iso_date,
+span[class*="git-revision-date"],
+.md-source-file__fact,
+.md-source-file__fact--created,
+.md-source-file__fact--updated,
+[class*="timeago"],
+.md-typeset time {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    height: 0 !important;
+    width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Hide any SVG icons that might be clock icons */
+svg[class*="clock"],
+svg[class*="time"],
+.md-icon[href*="clock"],
+.md-icon[href*="time"] {
+    display: none !important;
+}
+
+/* NUCLEAR OPT: Remove all top spacing/margins/padding */
+html,
+body {
+    margin: 0 !important;
+    padding: 0 !important;
+    top: 0 !important;
+    background-color: #ffffff !important;
+    /* Force White Background */
+    color: #0f172a;
+    /* Dark text for light mode */
+}
+
+/* Hide announcement bar aggressively */
+.md-banner {
+    display: none !important;
+    height: 0 !important;
+    margin: 0 !important;
+    border: none !important;
+}
+
+/* ============================================
+   COMPACT NAVBAR - FIXED, NO BORDERS, SINGLE ROW ON SCROLL
+   UNIVERSAL FOR ALL PAGES (STATIC & DYNAMIC)
+   ============================================ */
+
+/* GLOBAL: Remove ALL borders from header on every page */
+.md-header,
+body .md-header,
+html .md-header,
+* .md-header,
+[data-md-component="header"] {
+    background-color: rgba(15, 23, 42, 0.95) !important;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: none !important;
+    border-top: none !important;
+    border-bottom: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+    position: fixed !important;
+    top: 0 !important;
+    width: 100% !important;
+    z-index: 100 !important;
+    color: #ffffff !important;
+    height: 2.75rem !important;
+    min-height: 2.75rem !important;
+    transition: height 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Force remove any pseudo-element borders */
+.md-header::before,
+.md-header::after,
+.md-header *::before,
+.md-header *::after {
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* Remove shadow state - keep it clean on all pages */
+.md-header--shadow,
+body .md-header--shadow,
+html .md-header--shadow {
+    box-shadow: none !important;
+    border: none !important;
+    border-bottom: none !important;
+}
+
+/* Compact header inner elements */
+.md-header__inner {
+    height: 2.75rem !important;
+    padding: 0 0.75rem !important;
+    transition: height 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.md-header__button {
+    margin: 0 0.125rem !important;
+    padding: 0.25rem !important;
+    transition: all 0.25s ease;
+}
+
+.md-header__button svg {
+    width: 1.25rem !important;
+    height: 1.25rem !important;
+}
+
+.md-header__title {
+    font-size: 1rem !important;
+    line-height: 2.75rem !important;
+    padding: 0 !important;
+    font-weight: 600 !important;
+    transition: all 0.25s ease;
+}
+
+.md-logo {
+    height: 1.75rem !important;
+    width: 1.75rem !important;
+    margin: 0.5rem 0.5rem !important;
+    transition: all 0.25s ease;
+}
+
+/* Force header text/icons to be white */
+.md-header .md-header__button,
+.md-header .md-header__title,
+.md-header__nav,
+.md-header__topic {
+    color: #ffffff !important;
+    fill: #ffffff !important;
+}
+
+/* Smooth icon transitions */
+.md-header__button,
+.md-header__button svg,
+.md-logo,
+.md-logo img {
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ============================================
+   TABS - REMOVE ALL BORDERS, MERGE ON SCROLL
+   UNIVERSAL FOR ALL PAGES
+   ============================================ */
+
+/* Premium Navigation Tabs - NO BORDERS - GLOBAL */
+.md-tabs,
+body .md-tabs,
+html .md-tabs,
+* .md-tabs,
+[data-md-component="tabs"] {
+    background-color: rgba(15, 23, 42, 0.95) !important;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: none !important;
+    border-top: none !important;
+    border-bottom: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+    color: #ffffff !important;
+    position: fixed !important;
+    top: 2.75rem !important;
+    z-index: 99 !important;
+    width: 100% !important;
+    height: 2.75rem !important;
+    min-height: 2.75rem !important;
+    display: flex !important;
+    align-items: center !important;
+    padding: 0 0.75rem !important;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Force remove any pseudo-element borders from tabs */
+.md-tabs::before,
+.md-tabs::after,
+.md-tabs *::before,
+.md-tabs *::after {
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* SINGLE ROW ON SCROLL - Merge tabs into header - GLOBAL */
+.md-header--shadow ~ .md-tabs,
+body .md-header--shadow ~ .md-tabs,
+html .md-header--shadow ~ .md-tabs {
+    top: 0 !important;
+    height: 2.5rem !important;
+    min-height: 2.5rem !important;
+    padding: 0 0.5rem 0 12rem !important; /* Space for logo/title on left */
+}
+
+/* Adjust tabs list */
+.md-tabs__list {
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.25rem !important;
+}
+
+/* Default tab link styling - COMPACT & CLEAR */
+.md-tabs__link {
+    opacity: 0.65;
+    font-weight: 500;
+    font-size: 0.8125rem !important;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 0.375rem 0.75rem !important;
+    color: rgba(255, 255, 255, 0.65) !important;
+    position: relative;
+    border-radius: 0.375rem;
+    white-space: nowrap;
+    background: transparent !important;
+}
+
+/* Smaller tabs when merged into single row */
+.md-header--shadow ~ .md-tabs .md-tabs__link {
+    font-size: 0.75rem !important;
+    padding: 0.25rem 0.625rem !important;
+}
+
+/* Hover state for tabs - Clear feedback */
+.md-tabs__link:hover {
+    opacity: 1;
+    color: rgba(255, 255, 255, 1) !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+    transform: translateY(-1px);
+}
+
+/* ACTIVE TAB - PROMINENT HIGHLIGHTING WITH MULTIPLE VISUAL CUES */
+.md-tabs__link--active,
+.md-tabs__item--active .md-tabs__link {
+    opacity: 1 !important;
+    color: #60a5fa !important; /* Bright blue for high contrast */
+    font-weight: 700 !important; /* Bold for emphasis */
+    background: rgba(96, 165, 250, 0.15) !important; /* Subtle blue background */
+    box-shadow: inset 0 0 0 1px rgba(96, 165, 250, 0.3) !important; /* Blue border glow */
+}
+
+/* Add bottom border indicator for active tab */
+.md-tabs__link--active::after,
+.md-tabs__item--active .md-tabs__link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+    right: 10%;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #60a5fa, transparent);
+    border-radius: 2px 2px 0 0;
+    box-shadow: 0 0 8px rgba(96, 165, 250, 0.6);
+}
+
+/* Add top accent for active tab when in single row */
+.md-header--shadow ~ .md-tabs .md-tabs__link--active::before,
+.md-header--shadow ~ .md-tabs .md-tabs__item--active .md-tabs__link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 10%;
+    right: 10%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #60a5fa, transparent);
+    border-radius: 0 0 2px 2px;
+}
+
+/* Ensure active tab doesn't change on hover */
+.md-tabs__link--active:hover,
+.md-tabs__item--active .md-tabs__link:hover {
+    color: #60a5fa !important;
+    background: rgba(96, 165, 250, 0.15) !important;
+    transform: none;
+}
+
+/* ============================================
+   CONTENT SPACING - ADJUST FOR NAVBAR
+   UNIVERSAL FOR ALL PAGES
+   ============================================ */
+
+/* Fix main container spacing - GLOBAL */
+.md-main,
+body .md-main,
+html .md-main,
+body[data-md-path] .md-main {
+    padding-top: 0 !important;
+    background-color: #ffffff !important;
+}
+
+/* Content starts below navbar (two rows) - GLOBAL */
+.md-content,
+body .md-content,
+html .md-content,
+body[data-md-path] .md-content {
+    padding-top: 5.5rem !important; /* Header (2.75rem) + Tabs (2.75rem) */
+    margin-top: 0 !important;
+    transition: padding-top 0.25s ease;
+}
+
+.md-content__inner,
+body .md-content__inner,
+html .md-content__inner {
+    padding-top: 1rem !important;
+}
+
+/* Content spacing when navbar is single row (scrolled) - GLOBAL */
+.md-header--shadow ~ .md-main .md-content,
+body .md-header--shadow ~ .md-main .md-content,
+html .md-header--shadow ~ .md-main .md-content,
+body[data-md-path] .md-header--shadow ~ .md-main .md-content {
+    padding-top: 2.5rem !important; /* Single row height */
+}
+
+/* Ensure tabs are always visible - GLOBAL */
+.md-tabs,
+body .md-tabs,
+html .md-tabs {
+    margin-top: 0 !important;
+}
+
+:root {
+    --md-primary-fg-color: #3b82f6;
+    --md-primary-fg-color--light: #60a5fa;
+    --md-primary-fg-color--dark: #2563eb;
+    --md-accent-fg-color: #3b82f6;
+    /* Override code block background for Light Mode compatibility */
+    --md-code-bg-color: #f1f5f9;
+}
+
+/* Card hover effects - OPTIMIZED */
+.card-hover {
+    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+}
+
+.card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* Button animations - SIMPLIFIED */
+.btn-animate {
+    position: relative;
+    overflow: hidden;
+    transition: background-color 0.2s ease;
+}
+
+.btn-animate:hover {
+    width: 300px;
+    height: 300px;
+}
+
+/* Progress indicators */
+.progress-bar {
+    height: 4px;
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+    border-radius: 2px;
+    box-shadow: 0 2px 4px rgba(102, 126, 234, 0.3);
+}
+
+/* Notebook enhancements */
+.jp-Cell {
+    animation: fadeInUp 0.5s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Code syntax highlighting improvements */
+.md-typeset pre>code {
+    border-left: 3px solid var(--md-primary-fg-color);
+    padding-left: 1rem;
+}
+
+/* Enhanced admonitions */
+.md-typeset .admonition.tip {
+    background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+    border-left-color: #059669;
+}
+
+.md-typeset .admonition.warning {
+    background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+    border-left-color: #d97706;
+}
+
+.md-typeset .admonition.info {
+    background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+    border-left-color: #2563eb;
+}
+
+/* Tooltip styling */
+[data-tooltip] {
+    position: relative;
+    cursor: help;
+}
+
+[data-tooltip]::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0.5rem 1rem;
+    background: #1e293b;
+    color: white;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+    margin-bottom: 0.5rem;
+}
+
+[data-tooltip]:hover::after {
+    opacity: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 1400px;
+    /* Increased from 1280px for max space */
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* ... existing styles ... */
+
+.trust-logos {
+    display: flex;
+    gap: 0.75rem;
+    /* Slightly tighter gap to ensure fit */
+    justify-content: center;
+    flex-wrap: wrap;
+    /* Allow wrap on mobile */
+    opacity: 1;
+    margin-top: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .trust-logos {
+        flex-wrap: nowrap;
+        /* Force single row on desktop */
+        gap: 1.5rem;
+        /* Restore wider gap on desktop */
+    }
+}
+
+.tech-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 9999px;
+    /* Pill shape looks better for tags */
+    color: #475569;
+    font-weight: 600;
+    font-size: 0.875rem;
+    transition: all 0.2s;
+    cursor: default;
+    white-space: nowrap;
+    /* Prevent text wrapping inside pills */
+}
+
+.tech-item:hover {
+    background: #ffffff;
+    border-color: #cbd5e1;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    color: #0f172a;
+}
+
+/* Loading skeleton */
+.skeleton {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+    0% {
+        background-position: 200% 0;
+    }
+
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+/* Table enhancements */
+.md-typeset table:not([class]) {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e2e8f0;
+}
+
+.md-typeset table:not([class]) thead {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.md-typeset table:not([class]) tr:hover {
+    background: #f8fafc;
+}
+
+/* Track Buttons (New Hero Design) */
+/* Track Buttons (New Hero Design) */
+.hero-tracks-container {
+    margin-bottom: 3rem;
+}
+
+.hero-tracks-label {
+    font-size: 0.875rem;
+    color: #94a3b8;
+    margin-bottom: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.hero-tracks {
+    display: flex;
+    flex-wrap: wrap;
+    /* Wraps on mobile */
+    justify-content: center;
+    gap: 0.75rem;
+}
+
+/* Force single row on Desktop */
+@media (min-width: 1024px) {
+    .hero-tracks {
+        flex-wrap: nowrap;
+        gap: 0.75rem;
+    }
+}
+
+.track-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.25rem;
+    border-radius: 9999px;
+    /* Pill shape */
+    font-weight: 600;
+    font-size: 0.9375rem;
+    text-decoration: none !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* Unified Design: Subtle Glass/Gradient Base */
+    background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+    border: 1px solid #e2e8f0;
+    color: #475569;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    white-space: nowrap;
+    /* Force 1 line */
+}
+
+@media (min-width: 1024px) {
+    .track-btn {
+        padding: 0.625rem 1rem;
+        /* Compact for desktop row */
+        font-size: 0.875rem;
+        flex: 1 1 auto;
+        /* Allow growth/shrink evenly */
+        justify-content: center;
+    }
+}
+
+.track-btn span {
+    font-size: 1.25rem;
+    color: #64748b;
+    /* Muted icon by default */
+    transition: color 0.3s;
+}
+
+/* Hover States: Uniform Gradient Reveal */
+.track-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    color: #0f172a;
+    border-color: #cbd5e1;
+}
+
+/* Specific Gradient Hints on Hover */
+.track-blue:hover span {
+    color: #0ea5e9;
+}
+
+.track-blue:hover {
+    background: linear-gradient(180deg, #f0f9ff 0%, #e0f2fe 100%);
+    border-color: #bae6fd;
+}
+
+.track-indigo:hover span {
+    color: #6366f1;
+}
+
+.track-indigo:hover {
+    background: linear-gradient(180deg, #eef2ff 0%, #e0e7ff 100%);
+    border-color: #c7d2fe;
+}
+
+.track-purple:hover span {
+    color: #d946ef;
+}
+
+.track-purple:hover {
+    background: linear-gradient(180deg, #faf5ff 0%, #f3e8ff 100%);
+    border-color: #e9d5ff;
+}
+
+.track-orange:hover span {
+    color: #f97316;
+}
+
+.track-orange:hover {
+    background: linear-gradient(180deg, #fff7ed 0%, #ffedd5 100%);
+    border-color: #ffedd5;
+}
+
+.track-green:hover span {
+    color: #10b981;
+}
+
+.track-green:hover {
+    background: linear-gradient(180deg, #ecfdf5 0%, #d1fae5 100%);
+    border-color: #a7f3d0;
+}
+
+@media (max-width: 640px) {
+    .hero-tracks {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 0 1rem;
+    }
+}
+
+/* Search enhancements - COMPACT & RECTANGULAR */
+.md-search {
+    padding: 0 !important;
+}
+
+.md-search__form {
+    height: 2rem !important;
+    border-radius: 0.25rem !important; /* Rectangular, not rounded */
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    border: none !important; /* Remove all borders */
+    transition: all 0.25s ease;
+}
+
+.md-header--shadow .md-search__form {
+    height: 1.875rem !important;
+}
+
+.md-search__input {
+    border-radius: 0.25rem !important; /* Rectangular, not rounded */
+    padding-left: 2.5rem !important;
+    padding-right: 0.75rem !important;
+    height: 2rem !important;
+    color: #ffffff !important;
+    background-color: transparent !important;
+    border: none !important; /* Remove all borders */
+    font-family: 'Inter', sans-serif !important;
+    font-size: 0.8125rem !important;
+    transition: all 0.25s ease;
+}
+
+.md-header--shadow .md-search__input {
+    height: 1.875rem !important;
+    font-size: 0.75rem !important;
+}
+
+/* Hover state (inactive) */
+.md-search__form:hover {
+    background-color: rgba(255, 255, 255, 0.15) !important;
+    border: none !important;
+}
+
+/* Focus/Active state - Switch to Light theme for readability with results */
+.md-search__input:focus,
+.md-search--active .md-search__input {
+    background-color: #ffffff !important;
+    color: #0f172a !important;
+    border: none !important;
+}
+
+.md-search--active .md-search__form {
+    background-color: #ffffff !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border: none !important;
+}
+
+.md-search__input::placeholder {
+    color: rgba(255, 255, 255, 0.7) !important;
+    opacity: 1;
+}
+
+/* Change placeholder color when active to match dark text */
+.md-search__input:focus::placeholder,
+.md-search--active .md-search__input::placeholder {
+    color: #94a3b8 !important;
+}
+
+/* Adjust search icon color */
+.md-search__icon {
+    color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.md-search--active .md-search__icon {
+    color: #64748b !important;
+}
+
+/* Search results overlay - ensure it displays outside navbar */
+.md-search__overlay {
+    background-color: rgba(0, 0, 0, 0.54) !important;
+    z-index: 98 !important; /* Below navbar but above content */
+}
+
+/* Search output container - position below navbar */
+.md-search__output {
+    position: fixed !important;
+    top: 5.5rem !important; /* Below header + tabs */
+    left: 0 !important;
+    right: 0 !important;
+    max-height: calc(100vh - 5.5rem) !important;
+    overflow-y: auto !important;
+    background-color: #ffffff !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15) !important;
+    border: none !important;
+    z-index: 99 !important;
+}
+
+/* Adjust search output when navbar is compact */
+.md-header--shadow ~ .md-search__output {
+    top: 5rem !important; /* Below compact header + tabs */
+    max-height: calc(100vh - 5rem) !important;
+}
+
+/* Search results scrollbar */
+.md-search__scrollwrap {
+    max-height: calc(100vh - 5.5rem) !important;
+    overflow-y: auto !important;
+    border: none !important;
+}
+
+.md-header--shadow ~ .md-search__scrollwrap {
+    max-height: calc(100vh - 5rem) !important;
+}
+
+/* Make navbar full width */
+.md-header .md-grid,
+.md-tabs .md-grid {
+    max-width: 100% !important;
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+    margin: 0 !important;
+    width: 100% !important;
+}
+
+/* Make entire page layout full width */
+.md-container {
+    max-width: 100% !important;
+}
+
+.md-main__inner {
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+}
+
+/* Keep sidebar but make content area wider */
+.md-sidebar--primary {
+    width: 15rem !important;
+}
+
+.md-sidebar--secondary {
+    width: 15rem !important;
+}
+
+.md-content {
+    max-width: 100% !important;
+    margin: 0 !important;
+}
+
+.md-content__inner {
+    max-width: 100% !important;
+    padding: 0 2rem !important;
+}
+
+/* Adjust grid container */
+.md-grid {
+    max-width: 100% !important;
+    margin: 0 !important;
+}
+
+@media (max-width: 768px) {
+    .md-main__inner {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+    
+    .md-content__inner {
+        padding: 0 1rem !important;
+    }
+    
+    /* Extra compact navbar on mobile */
+    .md-header {
+        height: 2.5rem !important;
+        min-height: 2.5rem !important;
+    }
+    
+    .md-header__inner {
+        height: 2.5rem !important;
+        padding: 0 0.5rem !important;
+    }
+    
+    .md-header__title {
+        font-size: 0.9375rem !important;
+        line-height: 2.5rem !important;
+    }
+    
+    .md-logo {
+        height: 1.5rem !important;
+        width: 1.5rem !important;
+        margin: 0.5rem 0.375rem !important;
+    }
+    
+    .md-header__button svg {
+        width: 1.125rem !important;
+        height: 1.125rem !important;
+    }
+    
+    .md-tabs {
+        top: 2.5rem !important;
+        height: 2.5rem !important;
+        min-height: 2.5rem !important;
+        padding: 0 0.375rem !important;
+    }
+    
+    .md-tabs__link {
+        font-size: 0.75rem !important;
+        padding: 0.3125rem 0.5rem !important;
+    }
+    
+    .md-search__form {
+        height: 1.75rem !important;
+        border-radius: 0.25rem !important;
+    }
+    
+    .md-search__input {
+        height: 1.75rem !important;
+        font-size: 0.75rem !important;
+        padding-left: 2.25rem !important;
+        border-radius: 0.25rem !important;
+    }
+    
+    .md-content {
+        padding-top: 5rem !important; /* 2.5rem header + 2.5rem tabs */
+    }
+    
+    /* Search output on mobile */
+    .md-search__output {
+        top: 5rem !important;
+        max-height: calc(100vh - 5rem) !important;
+    }
+    
+    .md-search__scrollwrap {
+        max-height: calc(100vh - 5rem) !important;
+    }
+    
+    /* Single row on scroll - mobile */
+    .md-header--shadow ~ .md-tabs {
+        top: 0 !important;
+        height: 2.25rem !important;
+        padding: 0 0.25rem 0 8rem !important; /* Space for logo/title */
+    }
+    
+    .md-header--shadow ~ .md-tabs .md-tabs__link {
+        font-size: 0.6875rem !important;
+        padding: 0.25rem 0.375rem !important;
+    }
+    
+    .md-header--shadow ~ .md-main .md-content {
+        padding-top: 2.25rem !important; /* Single row height */
+    }
+    
+    .md-header--shadow ~ .md-search__output {
+        top: 2.25rem !important;
+        max-height: calc(100vh - 2.25rem) !important;
+    }
+    
+    .md-header--shadow ~ .md-search__scrollwrap {
+        max-height: calc(100vh - 2.25rem) !important;
+    }
+}
+
+/* ============================================
+   SIDEBAR NAVIGATION IMPROVEMENTS
+   ============================================ */
+
+/* Remove all checkboxes from navigation */
+.md-nav__toggle,
+.md-nav__item--nested > .md-nav__link::after {
+    display: none !important;
+}
+
+/* Adjust spacing after removing checkboxes */
+.md-nav__item--nested > .md-nav__link {
+    padding-left: 0.5rem !important;
+}
+
+.md-nav__item .md-nav__link {
+    padding-left: 0.5rem !important;
+}
+
+/* Hide deep nested sections (keep only modules and chapters) */
+.md-nav__item .md-nav .md-nav .md-nav {
+    display: none !important;
+}
+
+/* Sidebar container styling - very light blue tint */
+.md-sidebar--primary {
+    background: #f0f9ff;
+    border-right: 1px solid #dbeafe;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+}
+
+/* Sidebar inner padding - reduced */
+.md-sidebar__inner {
+    padding: 1rem 0;
+}
+
+/* Sidebar typography improvements - smaller and tighter */
+.md-nav {
+    font-size: 0.75rem;
+    line-height: 1.3;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.md-nav__title {
+    font-weight: 700;
+    font-size: 0.625rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #9ca3af;
+    padding: 0.75rem 0.75rem 0.375rem;
+    margin-bottom: 0.125rem;
+}
+
+/* Navigation links styling - compact */
+.md-nav__link {
+    color: #64748b;
+    font-weight: 500;
+    font-size: 0.75rem;
+    padding: 0.375rem 0.75rem;
+    margin: 0.0625rem 0.5rem;
+    border-radius: 0.25rem;
+    transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+    border-left: none !important;
+    position: relative;
+    line-height: 1.3;
+    white-space: normal;
+    word-wrap: break-word;
+}
+
+.md-nav__link:hover {
+    background: #bfdbfe;
+    color: #1e40af;
+    transform: translateX(2px);
+}
+
+.md-nav__link--active {
+    background: #3b82f6;
+    color: #ffffff !important;
+    font-weight: 600;
+}
+
+.md-nav__link--active::before {
+    content: '';
+    position: absolute;
+    left: -0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 3px;
+    height: 60%;
+    background: #1e40af;
+    border-radius: 0 2px 2px 0;
+}
+
+/* Module/section headers (nested items) - with color coding */
+.md-nav__item--nested > .md-nav__link {
+    font-weight: 700;
+    color: #0f172a;
+    font-size: 0.6875rem;
+    margin-top: 0.875rem;
+    padding: 0.5rem 0.75rem 0.25rem;
+    border-top: 1px solid #dbeafe;
+    letter-spacing: 0.01em;
+    background: linear-gradient(90deg, #e0f2fe 0%, transparent 100%);
+    border-radius: 0.25rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+
+.md-nav__item--nested:first-child > .md-nav__link {
+    margin-top: 0.5rem;
+    border-top: none;
+}
+
+.md-nav__item--nested > .md-nav__link:hover {
+    background: linear-gradient(90deg, #bfdbfe 0%, transparent 100%);
+    color: #0f172a;
+    transform: none;
+}
+
+/* Color coding for different modules */
+.md-nav__item--nested:nth-child(1) > .md-nav__link {
+    border-left: 3px solid #3b82f6;
+}
+
+.md-nav__item--nested:nth-child(2) > .md-nav__link {
+    border-left: 3px solid #8b5cf6;
+}
+
+.md-nav__item--nested:nth-child(3) > .md-nav__link {
+    border-left: 3px solid #ec4899;
+}
+
+.md-nav__item--nested:nth-child(4) > .md-nav__link {
+    border-left: 3px solid #f59e0b;
+}
+
+.md-nav__item--nested:nth-child(5) > .md-nav__link {
+    border-left: 3px solid #10b981;
+}
+
+.md-nav__item--nested:nth-child(6) > .md-nav__link {
+    border-left: 3px solid #06b6d4;
+}
+
+/* Chapter items under modules - compact and clean */
+.md-nav__item--nested .md-nav__item .md-nav__link {
+    padding: 0.3rem 0.75rem 0.3rem 1rem;
+    font-size: 0.6875rem;
+    font-weight: 500;
+    position: relative;
+    color: #64748b;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+
+.md-nav__item--nested .md-nav__item .md-nav__link::before {
+    content: '';
+    position: absolute;
+    left: 0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 2px;
+    height: 2px;
+    background: #93c5fd;
+    border-radius: 50%;
+    transition: all 0.15s ease;
+}
+
+.md-nav__item--nested .md-nav__item .md-nav__link:hover {
+    background: #bfdbfe;
+    color: #1e40af;
+}
+
+.md-nav__item--nested .md-nav__item .md-nav__link:hover::before {
+    background: #3b82f6;
+    transform: translateY(-50%) scale(1.5);
+}
+
+.md-nav__item--nested .md-nav__item .md-nav__link--active {
+    background: #3b82f6;
+    color: #ffffff;
+}
+
+.md-nav__item--nested .md-nav__item .md-nav__link--active::before {
+    display: none;
+}
+
+/* Smooth scrollbar for sidebar */
+.md-sidebar__scrollwrap {
+    scrollbar-width: thin;
+    scrollbar-color: #93c5fd transparent;
+}
+
+.md-sidebar__scrollwrap::-webkit-scrollbar {
+    width: 4px;
+}
+
+.md-sidebar__scrollwrap::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.md-sidebar__scrollwrap::-webkit-scrollbar-thumb {
+    background: #93c5fd;
+    border-radius: 2px;
+    transition: background 0.2s ease;
+}
+
+.md-sidebar__scrollwrap::-webkit-scrollbar-thumb:hover {
+    background: #60a5fa;
+}
+
+/* Add subtle divider between navigation groups */
+.md-nav__list > .md-nav__item:not(:last-child) {
+    margin-bottom: 0.0625rem;
+}
+
+/* Improve spacing for nested navigation - tighter */
+.md-nav__item--nested .md-nav {
+    padding-top: 0.125rem;
+    padding-bottom: 0.25rem;
+}
+
+/* Hide duplicate section titles in navigation */
+.md-nav--primary > .md-nav__list > .md-nav__item > .md-nav > .md-nav__list > .md-nav__item:first-child {
+    /* Will be handled by JavaScript for better control */
+}
+
+/* Smooth scrollbar for sidebar */
+@media (max-width: 1220px) {
+    .md-nav__link {
+        font-size: 0.6875rem;
+        padding: 0.3rem 0.625rem;
+    }
+    
+    .md-nav__title {
+        font-size: 0.5625rem;
+        padding: 0.625rem 0.625rem 0.25rem;
+    }
+    
+    .md-nav__item--nested > .md-nav__link {
+        font-size: 0.625rem;
+    }
+    
+    .md-nav__item--nested .md-nav__item .md-nav__link {
+        font-size: 0.625rem;
+    }
+}
+
+/* Navigation improvements */
+.md-tabs__link {
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.5rem;
+    transition: all 0.2s ease;
+}
+
+.md-tabs__link--active {
+    border-bottom: none;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.md-tabs__item:nth-child(n+2):nth-child(-n+6) .md-tabs__link {
+    color: #7dd3fc !important;
+    font-weight: 700 !important;
+    opacity: 1;
+}
+
+.md-tabs__item:nth-child(n+2):nth-child(-n+6) .md-tabs__link:hover {
+    color: #ffffff !important;
+    background: rgba(14, 165, 233, 0.15);
+    box-shadow: none;
+}
+
+/* Footer styling */
+.md-footer {
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+}
+
+/* Mobile responsive improvements */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2rem !important;
+        line-height: 1.2;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem !important;
+    }
+
+    .btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* Print styles */
+@media print {
+
+    .md-header,
+    .md-footer,
+    .md-sidebar {
+        display: none;
+    }
+
+    .md-content {
+        max-width: 100%;
+    }
+}
+
+/* Dark mode enhancements */
+[data-md-color-scheme="slate"] {
+    --md-code-bg-color: #1e293b;
+}
+
+[data-md-color-scheme="slate"] .hero-gradient {
+    background: linear-gradient(135deg, #4338ca 0%, #6b21a8 100%);
+}
+
+/* Accessibility improvements */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--md-primary-fg-color);
+    color: white;
+    padding: 8px;
+    text-decoration: none;
+    z-index: 100;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* Focus visible for keyboard navigation */
+*:focus-visible {
+    outline: 2px solid var(--md-primary-fg-color);
+    outline-offset: 2px;
+}
+
+
+/* Module Grid Styling for Learning Paths */
+.module-grid {
+    display: grid;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.module-grid h3 {
+    color: #1e293b;
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid #3b82f6;
+}
+
+.module-grid p {
+    color: #475569;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+}
+
+.module-grid strong {
+    color: #0f172a;
+    font-weight: 600;
+}
+
+.module-grid ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.module-grid ul li {
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.module-grid ul li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: #3b82f6;
+    font-weight: bold;
+}
+
+.module-grid ul li a {
+    color: #3b82f6;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.module-grid ul li a:hover {
+    color: #2563eb;
+    text-decoration: underline;
+}
+
+/* Coming Soon styling */
+.module-grid em {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    background: #f1f5f9;
+    color: #64748b;
+    border-radius: 0.375rem;
+    font-style: normal;
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+/* Learning Path Hero Section */
+.learning-path-hero {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Module Cards */
+.module-card {
+    animation: fadeInUp 0.6s ease-out;
+    animation-fill-mode: both;
+}
+
+.module-card:nth-child(1) { animation-delay: 0.1s; }
+.module-card:nth-child(2) { animation-delay: 0.2s; }
+.module-card:nth-child(3) { animation-delay: 0.3s; }
+.module-card:nth-child(4) { animation-delay: 0.4s; }
+.module-card:nth-child(5) { animation-delay: 0.5s; }
+.module-card:nth-child(6) { animation-delay: 0.6s; }
+
+/* Responsive grid for prerequisites and outcomes */
+@media (max-width: 768px) {
+    .learning-path-hero h1 {
+        font-size: 1.875rem !important;
+    }
+    
+    .learning-path-hero p {
+        font-size: 1rem !important;
+    }
+}
+
+/* Responsive adjustments for learning paths */
+@media (max-width: 768px) {
+    .md-content {
+        padding-top: 5rem !important;
+    }
+    
+    .module-grid {
+        gap: 1.5rem;
+    }
+    
+    .module-grid h3 {
+        font-size: 1.25rem;
+    }
+}
+
+/* ============================================
+   HIDE SIDEBAR FOR SPECIFIC PAGES
+   (Navbar remains consistent across all pages)
+   ============================================ */
+
+/* Hide left sidebar for Community, About, and Contributing pages */
+body[data-md-path="community/"],
+body[data-md-path="about/"],
+body[data-md-path="contributing/"] {
+    /* Hide the primary sidebar */
+    .md-sidebar--primary {
+        display: none !important;
+    }
+    
+    /* Center the content by removing sidebar space */
+    .md-content {
+        margin-left: 0 !important;
+        max-width: 100% !important;
+        /* Keep navbar padding - don't override */
+        padding-top: 5.5rem !important;
+    }
+    
+    /* Center the content container */
+    .md-content__inner {
+        max-width: 1200px !important;
+        margin: 0 auto !important;
+        padding-left: 3rem !important;
+        padding-right: 3rem !important;
+        /* Keep top padding from global rule */
+        padding-top: 1rem !important;
+    }
+}
+
+/* Alternative selector using page title for more reliability */
+[data-md-component="container"]:has([title="Community"]) .md-sidebar--primary,
+[data-md-component="container"]:has([title="About"]) .md-sidebar--primary,
+[data-md-component="container"]:has([title="Contributing"]) .md-sidebar--primary {
+    display: none !important;
+}
+
+[data-md-component="container"]:has([title="Community"]) .md-content,
+[data-md-component="container"]:has([title="About"]) .md-content,
+[data-md-component="container"]:has([title="Contributing"]) .md-content {
+    margin-left: 0 !important;
+    max-width: 100% !important;
+    /* Keep navbar padding */
+    padding-top: 5.5rem !important;
+}
+
+[data-md-component="container"]:has([title="Community"]) .md-content__inner,
+[data-md-component="container"]:has([title="About"]) .md-content__inner,
+[data-md-component="container"]:has([title="Contributing"]) .md-content__inner {
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding-left: 3rem !important;
+    padding-right: 3rem !important;
+    padding-top: 1rem !important;
+}
+
+/* When scrolled (single row navbar) - adjust these pages too */
+body[data-md-path="community/"] .md-header--shadow ~ .md-main .md-content,
+body[data-md-path="about/"] .md-header--shadow ~ .md-main .md-content,
+body[data-md-path="contributing/"] .md-header--shadow ~ .md-main .md-content {
+    padding-top: 2.5rem !important;
+}
+
+/* Mobile responsive adjustments for these pages */
+@media (max-width: 768px) {
+    body[data-md-path="community/"] .md-content__inner,
+    body[data-md-path="about/"] .md-content__inner,
+    body[data-md-path="contributing/"] .md-content__inner,
+    [data-md-component="container"]:has([title="Community"]) .md-content__inner,
+    [data-md-component="container"]:has([title="About"]) .md-content__inner,
+    [data-md-component="container"]:has([title="Contributing"]) .md-content__inner {
+        padding-left: 1.5rem !important;
+        padding-right: 1.5rem !important;
+        padding-top: 1rem !important;
+    }
+}

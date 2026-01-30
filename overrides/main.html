@@ -1,0 +1,102 @@
+{% extends "base.html" %}
+
+{% block htmltitle %}
+<title>{% if page.title %}{{ page.title }} - {% endif %}{{ config.site_name }}</title>
+{% endblock %}
+
+{% block extrahead %}
+<!-- Fonts - Optimized with font-display swap -->
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'"/>
+
+<!-- Material Symbols - Async load -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" media="print" onload="this.media='all'"/>
+
+<!-- Tailwind CSS for enhanced styling - ASYNC LOAD -->
+<script>
+    // Load Tailwind asynchronously to prevent render blocking
+    (function() {
+        var script = document.createElement('script');
+        script.src = 'https://cdn.tailwindcss.com?plugins=forms,container-queries';
+        script.async = true;
+        script.onload = function() {
+            // Configure Tailwind after it loads
+            if (window.tailwind) {
+                tailwind.config = {
+                    darkMode: "class",
+                    theme: {
+                        extend: {
+                            colors: {
+                                "primary": "#2463eb",
+                                "primary-dark": "#1d4ed8",
+                                "background-light": "#ffffff",
+                                "background-dark": "#111621",
+                                "surface-light": "#f8fafc",
+                                "surface-dark": "#1e293b",
+                                "border-light": "#e2e8f0",
+                                "border-dark": "#334155",
+                                "text-main": "#0f172a",
+                                "text-muted": "#64748b",
+                                "code-bg": "#1e293b",
+                            },
+                            fontFamily: {
+                                "display": ["Plus Jakarta Sans", "sans-serif"],
+                                "mono": ["JetBrains Mono", "monospace"],
+                            },
+                            borderRadius: {"DEFAULT": "0.5rem", "lg": "0.75rem", "xl": "1rem", "2xl": "1.5rem", "full": "9999px"},
+                            boxShadow: {
+                                'soft': '0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px -1px rgba(0, 0, 0, 0.02)',
+                                'glow': '0 0 15px rgba(36, 99, 235, 0.15)',
+                            }
+                        },
+                    },
+                };
+            }
+        };
+        document.head.appendChild(script);
+    })();
+</script>
+{% endblock %}
+
+{% block styles %}
+{{ super() }}
+<link rel="stylesheet" href="{{ 'stylesheets/notebook-enhanced.css' | url }}">
+{% endblock %}
+
+{% block site_name %}
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    // Get the active navigation tab
+    const activeTab = document.querySelector('.md-tabs__link--active');
+    const siteNameElement = document.querySelector('.md-header__title');
+    
+    if (activeTab && siteNameElement) {
+      const activeTabName = activeTab.textContent.trim();
+      // Update the site name with the active tab name
+      const titleLink = siteNameElement.querySelector('.md-header__ellipsis');
+      if (titleLink) {
+        titleLink.textContent = activeTabName;
+      }
+    }
+    
+    // Update on tab click
+    document.querySelectorAll('.md-tabs__link').forEach(tab => {
+      tab.addEventListener('click', function() {
+        setTimeout(() => {
+          const siteNameElement = document.querySelector('.md-header__title');
+          const titleLink = siteNameElement?.querySelector('.md-header__ellipsis');
+          if (titleLink) {
+            titleLink.textContent = this.textContent.trim();
+          }
+        }, 100);
+      });
+    });
+  });
+</script>
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+<script src="{{ 'javascripts/notebook-enhanced.js' | url }}"></script>
+{% endblock %}
