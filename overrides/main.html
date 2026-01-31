@@ -17,43 +17,42 @@
 <script>
     // Load Tailwind asynchronously to prevent render blocking
     (function() {
+        // Configure Tailwind first
+        window.tailwind = window.tailwind || {};
+        window.tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#2463eb",
+                        "primary-dark": "#1d4ed8",
+                        "background-light": "#ffffff",
+                        "background-dark": "#111621",
+                        "surface-light": "#f8fafc",
+                        "surface-dark": "#1e293b",
+                        "border-light": "#e2e8f0",
+                        "border-dark": "#334155",
+                        "text-main": "#0f172a",
+                        "text-muted": "#64748b",
+                        "code-bg": "#1e293b",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"],
+                        "mono": ["JetBrains Mono", "monospace"],
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "0.75rem", "xl": "1rem", "2xl": "1.5rem", "full": "9999px"},
+                    boxShadow: {
+                        'soft': '0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px -1px rgba(0, 0, 0, 0.02)',
+                        'glow': '0 0 15px rgba(36, 99, 235, 0.15)',
+                    }
+                },
+            },
+        };
+        
+        // Then load script
         var script = document.createElement('script');
         script.src = 'https://cdn.tailwindcss.com?plugins=forms,container-queries';
         script.async = true;
-        script.onload = function() {
-            // Configure Tailwind after it loads
-            if (window.tailwind) {
-                tailwind.config = {
-                    darkMode: "class",
-                    theme: {
-                        extend: {
-                            colors: {
-                                "primary": "#2463eb",
-                                "primary-dark": "#1d4ed8",
-                                "background-light": "#ffffff",
-                                "background-dark": "#111621",
-                                "surface-light": "#f8fafc",
-                                "surface-dark": "#1e293b",
-                                "border-light": "#e2e8f0",
-                                "border-dark": "#334155",
-                                "text-main": "#0f172a",
-                                "text-muted": "#64748b",
-                                "code-bg": "#1e293b",
-                            },
-                            fontFamily: {
-                                "display": ["Plus Jakarta Sans", "sans-serif"],
-                                "mono": ["JetBrains Mono", "monospace"],
-                            },
-                            borderRadius: {"DEFAULT": "0.5rem", "lg": "0.75rem", "xl": "1rem", "2xl": "1.5rem", "full": "9999px"},
-                            boxShadow: {
-                                'soft': '0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px -1px rgba(0, 0, 0, 0.02)',
-                                'glow': '0 0 15px rgba(36, 99, 235, 0.15)',
-                            }
-                        },
-                    },
-                };
-            }
-        };
         document.head.appendChild(script);
     })();
 </script>
@@ -66,33 +65,36 @@
 
 {% block site_name %}
 <script>
-  document.addEventListener("DOMContentLoaded", function() {
-    // Get the active navigation tab
-    const activeTab = document.querySelector('.md-tabs__link--active');
-    const siteNameElement = document.querySelector('.md-header__title');
+  (function() {
+    'use strict';
     
-    if (activeTab && siteNameElement) {
-      const activeTabName = activeTab.textContent.trim();
-      // Update the site name with the active tab name
-      const titleLink = siteNameElement.querySelector('.md-header__ellipsis');
-      if (titleLink) {
-        titleLink.textContent = activeTabName;
-      }
+    function updateSiteName() {
+      requestAnimationFrame(() => {
+        const activeTab = document.querySelector('.md-tabs__link--active');
+        const siteNameElement = document.querySelector('.md-header__title');
+        
+        if (activeTab && siteNameElement) {
+          const activeTabName = activeTab.textContent.trim();
+          const titleLink = siteNameElement.querySelector('.md-header__ellipsis');
+          if (titleLink && titleLink.textContent !== activeTabName) {
+            titleLink.textContent = activeTabName;
+          }
+        }
+      });
     }
     
-    // Update on tab click
-    document.querySelectorAll('.md-tabs__link').forEach(tab => {
-      tab.addEventListener('click', function() {
-        setTimeout(() => {
-          const siteNameElement = document.querySelector('.md-header__title');
-          const titleLink = siteNameElement?.querySelector('.md-header__ellipsis');
-          if (titleLink) {
-            titleLink.textContent = this.textContent.trim();
-          }
-        }, 100);
-      });
-    });
-  });
+    // Run on load
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', updateSiteName, { once: true });
+    } else {
+      updateSiteName();
+    }
+    
+    // Handle instant navigation
+    if (typeof app !== 'undefined' && app.document$) {
+      app.document$.subscribe(updateSiteName);
+    }
+  })();
 </script>
 {% endblock %}
 

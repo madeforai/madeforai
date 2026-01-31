@@ -25,6 +25,15 @@
         // Only add toggle on desktop
         if (window.innerWidth <= 1220) return;
         
+        // Check if sidebar exists and is visible
+        const sidebar = document.querySelector('.md-sidebar--primary');
+        if (!sidebar || sidebar.style.display === 'none') return;
+        
+        // Don't add toggle on homepage or pages without sidebar
+        const currentPath = window.location.pathname;
+        const noSidebarPages = ['/', '/index.html', '/community/', '/contributing/'];
+        if (noSidebarPages.some(page => currentPath.endsWith(page))) return;
+        
         // Check if toggle already exists
         if (document.querySelector('.sidebar-toggle')) return;
         
@@ -33,7 +42,7 @@
         toggleBtn.setAttribute('aria-label', 'Toggle sidebar');
         toggleBtn.innerHTML = `
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
             </svg>
         `;
         
@@ -53,6 +62,8 @@
     }
     
     // Debounced resize handler
+    let resizeListener = null;
+    
     const handleResize = debounce(function() {
         const existingToggle = document.querySelector('.sidebar-toggle');
         if (window.innerWidth > 1220 && !existingToggle) {
@@ -66,13 +77,28 @@
     // Initialize
     function init() {
         initSidebarToggle();
-        window.addEventListener('resize', handleResize, { passive: true });
+        
+        // Remove old listener if exists
+        if (resizeListener) {
+            window.removeEventListener('resize', resizeListener);
+        }
+        
+        // Add new resize listener
+        resizeListener = handleResize;
+        window.addEventListener('resize', resizeListener, { passive: true });
     }
     
     // Run initialization
     if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', init);
+        document.addEventListener('DOMContentLoaded', init, { once: true });
     } else {
         init();
+    }
+    
+    // Handle instant navigation
+    if (typeof app !== 'undefined' && app.document$) {
+        app.document$.subscribe(() => {
+            requestAnimationFrame(init);
+        });
     }
 })();

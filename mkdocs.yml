@@ -37,7 +37,6 @@ theme:
     - navigation.indexes
     - navigation.instant
     - navigation.instant.prefetch
-    - navigation.instant.progress
     - navigation.path
     - navigation.sections
     - navigation.tabs
@@ -94,9 +93,10 @@ extra:
           data: 0
           note: Thanks for your feedback! Help us improve by using our feedback form.
   
-  version:
-    provider: mike
-    default: latest
+  # Version provider removed - causes 404 errors for versions.json
+  # version:
+  #   provider: mike
+  #   default: latest
 
 extra_css:
   - stylesheets/css/extra.css
@@ -105,14 +105,14 @@ extra_css:
   - stylesheets/css/page-loader.css
 
 extra_javascript:
-  - stylesheets/js/mathjax.js
-  - https://polyfill.io/v3/polyfill.min.js?features=es6
-  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js?defer
-  - javascripts/navbar-enhancer.js?defer
-  - javascripts/page-layout-enhancer.js?defer
-  - javascripts/notebook-enhanced.js?defer
-  - javascripts/sidebar-enhancer.js?defer
-  - javascripts/page-loader.js?defer
+  - javascripts/performance-optimizer.js
+  - javascripts/force-load-complete.js
+  - javascripts/disable-progress.js
+  - javascripts/navbar-enhancer.js
+  - javascripts/page-layout-enhancer.js
+  - javascripts/sidebar-enhancer.js
+  - javascripts/notebook-enhanced.js
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 
 markdown_extensions:
   # Python Markdown
@@ -183,8 +183,10 @@ plugins:
         remove_input_tags:
           - remove_input
   - git-revision-date-localized:
-      enable_creation_date: true
-      type: timeago
+      enable_creation_date: false
+      enabled: true
+      type: date
+      fallback_to_build_date: true
       exclude:
         - index.md
   - minify:
@@ -225,7 +227,6 @@ nav:
   - Business AI:
       - paths/business-ai/index.md
   - Community: community/index.md
-  - About: about/index.md
   - Contributing: contributing/index.md
 
 hooks:

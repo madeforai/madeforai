@@ -53,30 +53,38 @@
     }
     
     // Initialize
+    let scrollListener = null;
+    
     function init() {
         requestAnimationFrame(() => {
             updateActiveTab();
             handleScroll();
             
-            // Scroll listener with throttle
-            window.addEventListener('scroll', throttle(handleScroll, 16), { passive: true });
+            // Remove old listener if exists
+            if (scrollListener) {
+                window.removeEventListener('scroll', scrollListener);
+            }
+            
+            // Add new scroll listener
+            scrollListener = throttle(handleScroll, 16);
+            window.addEventListener('scroll', scrollListener, { passive: true });
         });
-        
-        // Handle instant navigation
-        if (typeof app !== 'undefined' && app.document$) {
-            app.document$.subscribe(() => {
-                requestAnimationFrame(() => {
-                    updateActiveTab();
-                    handleScroll();
-                });
-            });
-        }
     }
     
     // Run
     if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', init);
+        document.addEventListener('DOMContentLoaded', init, { once: true });
     } else {
         init();
+    }
+    
+    // Handle instant navigation
+    if (typeof app !== 'undefined' && app.document$) {
+        app.document$.subscribe(() => {
+            requestAnimationFrame(() => {
+                updateActiveTab();
+                handleScroll();
+            });
+        });
     }
 })();

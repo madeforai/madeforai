@@ -196,12 +196,22 @@ def generate_path_page(config, path_slug, path_config, nav_content):
     # Generate markdown content
     content = generate_markdown(path_config, modules, first_chapter_link)
     
-    # Write to file
+    # Only write if content has changed (prevent infinite rebuild loop)
     output_file.parent.mkdir(parents=True, exist_ok=True)
-    with open(output_file, 'w', encoding='utf-8') as f:
-        f.write(content)
     
-    print(f"✓ Generated: {output_file}")
+    should_write = True
+    if output_file.exists():
+        with open(output_file, 'r', encoding='utf-8') as f:
+            existing_content = f.read()
+        if existing_content == content:
+            should_write = False
+    
+    if should_write:
+        with open(output_file, 'w', encoding='utf-8') as f:
+            f.write(content)
+        print(f"✓ Generated: {output_file}")
+    else:
+        print(f"✓ Unchanged: {output_file}")
 
 
 def generate_markdown(config, modules, first_chapter_link):

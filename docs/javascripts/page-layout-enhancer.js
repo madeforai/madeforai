@@ -15,7 +15,7 @@
         };
     }
     
-    const NO_SIDEBAR_PAGES = ['/community/', '/about/', '/contributing/'];
+    const NO_SIDEBAR_PAGES = ['/community/', '/contributing/'];
     
     function shouldHideSidebar() {
         const currentPath = window.location.pathname;
@@ -56,22 +56,30 @@
     }
     
     // Initialize
+    let resizeListener = null;
+    
     function init() {
         adjustLayout();
         
-        // Handle navigation changes
-        if (typeof app !== 'undefined' && app.document$) {
-            app.document$.subscribe(() => requestAnimationFrame(adjustLayout));
+        // Remove old listener if exists
+        if (resizeListener) {
+            window.removeEventListener('resize', resizeListener);
         }
         
-        // Handle resize
-        window.addEventListener('resize', debounce(adjustLayout, 150), { passive: true });
+        // Add new resize listener
+        resizeListener = debounce(adjustLayout, 150);
+        window.addEventListener('resize', resizeListener, { passive: true });
     }
     
     // Run
     if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', init);
+        document.addEventListener('DOMContentLoaded', init, { once: true });
     } else {
         init();
+    }
+    
+    // Handle instant navigation
+    if (typeof app !== 'undefined' && app.document$) {
+        app.document$.subscribe(() => requestAnimationFrame(adjustLayout));
     }
 })();
