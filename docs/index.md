@@ -6,12 +6,7 @@ hide:
   - navigation
   - toc
   - path
-
-
 ---
-
-
-
 
 <!-- Main Content Wrapper to ensure rendering -->
 <div class="main-content-wrapper">
