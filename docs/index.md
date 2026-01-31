@@ -172,7 +172,7 @@ hide:
 
 </div>
 
-
+<style>
 .md-content {
     max-width: 100%;
     margin: 0;
