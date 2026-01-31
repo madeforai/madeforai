@@ -1,0 +1,350 @@
+/* Newsletter & Social Section */
+.newsletter-social-section {
+    padding: 8rem 2rem;
+    background: linear-gradient(180deg, #0a0f1e 0%, #1e293b 100%);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 600px;
+    width: 100%;
+}
+
+.newsletter-social-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle at 2px 2px, rgba(96, 165, 250, 0.08) 1px, transparent 0);
+    background-size: 40px 40px;
+}
+
+.newsletter-social-container {
+    max-width: 700px;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Title Section */
+.newsletter-header {
+    margin-bottom: 3.5rem;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.newsletter-main-title {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif !important;
+    font-size: clamp(2.5rem, 6vw, 3.5rem) !important;
+    font-weight: 800 !important;
+    color: #ffffff !important;
+    margin: 0 0 1.5rem 0 !important;
+    letter-spacing: -0.02em !important;
+    line-height: 1.2 !important;
+    text-align: center !important;
+    width: 100% !important;
+}
+
+.title-highlight {
+    background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 50%, #f472b6 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    position: relative !important;
+    display: inline-block !important;
+    font-weight: 900 !important;
+}
+
+.title-highlight::after {
+    content: '' !important;
+    position: absolute !important;
+    bottom: -6px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: 80% !important;
+    height: 3px !important;
+    background: linear-gradient(90deg, #60a5fa 0%, #a78bfa 50%, #f472b6 100%) !important;
+    border-radius: 2px !important;
+    opacity: 0.8 !important;
+}
+
+.newsletter-main-description {
+    font-size: 1.125rem !important;
+    color: #ffffff !important;
+    line-height: 1.7 !important;
+    margin: 0 !important;
+    font-weight: 400 !important;
+    text-align: center !important;
+    width: 100% !important;
+    max-width: 600px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    opacity: 0.95 !important;
+}
+
+/* Newsletter Form */
+.newsletter-signup-form {
+    margin-bottom: 4rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.newsletter-input-group {
+    display: flex;
+    align-items: stretch;
+    max-width: 550px;
+    width: 100%;
+    margin: 0 auto 1.25rem;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.newsletter-input-group:focus-within {
+    box-shadow: 0 20px 40px rgba(59, 130, 246, 0.4), 0 0 0 2px #3b82f6;
+    transform: translateY(-2px);
+}
+
+.newsletter-email-input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 1.125rem 1.5rem;
+    font-size: 1rem;
+    color: #0f172a;
+    background: transparent;
+    font-family: inherit;
+    text-align: left;
+}
+
+.newsletter-email-input::placeholder {
+    color: #94a3b8;
+}
+
+.newsletter-submit-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1.125rem 2rem;
+    background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
+    color: #ffffff;
+    border: none;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    letter-spacing: 0.01em;
+}
+
+.newsletter-submit-btn:hover {
+    background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 100%);
+    transform: translateX(2px);
+}
+
+.newsletter-submit-btn .material-symbols-outlined {
+    font-size: 1.25rem;
+    transition: transform 0.3s ease;
+}
+
+.newsletter-submit-btn:hover .material-symbols-outlined {
+    transform: translateX(3px);
+}
+
+.newsletter-privacy-note {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 0.5rem !important;
+    font-size: 0.875rem !important;
+    color: #ffffff !important;
+    margin: 0 !important;
+    font-weight: 400 !important;
+    text-align: center !important;
+    width: 100% !important;
+    opacity: 0.9 !important;
+}
+
+.newsletter-privacy-note .material-symbols-outlined {
+    font-size: 1rem !important;
+    opacity: 0.9 !important;
+    color: #60a5fa !important;
+}
+
+/* Divider */
+.section-divider {
+    position: relative;
+    margin: 0 0 3rem 0;
+    text-align: center;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.section-divider::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.2) 50%, transparent 100%);
+}
+
+.divider-text {
+    position: relative !important;
+    display: inline-block !important;
+    padding: 0 1.5rem !important;
+    background: linear-gradient(180deg, #0a0f1e 0%, #1e293b 100%) !important;
+    font-size: 0.8125rem !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.15em !important;
+    color: #ffffff !important;
+    font-weight: 600 !important;
+    opacity: 0.9 !important;
+}
+
+/* Social Icons - Minimal & Clean */
+.social-icons-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 50%;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+.social-icon svg {
+    width: 22px;
+    height: 22px;
+    color: #f1f5f9;
+    transition: all 0.3s ease;
+}
+
+/* Social Icon Hover Effects - Simplified */
+.social-icon.discord:hover {
+    background: #5865F2;
+    border-color: #5865F2;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(88, 101, 242, 0.4);
+}
+
+.social-icon.twitter:hover {
+    background: #000000;
+    border-color: #000000;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+}
+
+.social-icon.github:hover {
+    background: #24292e;
+    border-color: #24292e;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(36, 41, 46, 0.6);
+}
+
+.social-icon.linkedin:hover {
+    background: #0077b5;
+    border-color: #0077b5;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0, 119, 181, 0.6);
+}
+
+.social-icon:hover svg {
+    color: #ffffff;
+    transform: scale(1.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .newsletter-social-section {
+        padding: 4rem 1.5rem;
+        min-height: 450px;
+    }
+
+    .newsletter-main-title {
+        font-size: 2rem;
+    }
+
+    .newsletter-main-description {
+        font-size: 1rem;
+    }
+
+    .newsletter-input-group {
+        flex-direction: column;
+        border-radius: 12px;
+    }
+
+    .newsletter-email-input {
+        padding: 1rem 1.25rem;
+        text-align: center;
+    }
+
+    .newsletter-submit-btn {
+        width: 100%;
+        justify-content: center;
+        padding: 1rem 1.5rem;
+    }
+
+    .social-icons-container {
+        gap: 0.875rem;
+    }
+
+    .social-icon {
+        width: 48px;
+        height: 48px;
+    }
+
+    .social-icon svg {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .newsletter-social-section {
+        padding: 3rem 1rem;
+    }
+
+    .newsletter-main-title {
+        font-size: 1.75rem;
+    }
+
+    .title-highlight::after {
+        bottom: -4px;
+        height: 2px;
+    }
+}
