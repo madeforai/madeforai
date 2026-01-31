@@ -424,7 +424,9 @@ body[data-md-path] .md-content {
     padding-top: 5.5rem !important;
     /* Header (2.75rem) + Tabs (2.75rem) */
     margin-top: 0 !important;
-    transition: padding-top 0.25s ease;
+    margin-left: 15rem !important;
+    /* Account for fixed sidebar width */
+    transition: padding-top 0.25s ease, margin-left 0.25s ease;
 }
 
 .md-content__inner,
@@ -954,6 +956,11 @@ html .md-tabs {
         margin-top: 2.25rem !important;
     }
 
+    .md-content {
+        margin-left: 0 !important;
+        /* No sidebar margin on mobile */
+    }
+
     .md-content__inner {
         padding: 0 1rem !important;
     }
@@ -1091,11 +1098,12 @@ html .md-tabs {
     box-shadow: 2px 0 8px rgba(0, 0, 0, 0.05) !important;
     /* Subtle shadow for depth */
 
-    /* Positioning - CRITICAL */
-    position: sticky !important;
-    /* Use sticky instead of fixed for better behavior */
+    /* Positioning - CRITICAL - FIXED to prevent overlap */
+    position: fixed !important;
+    /* Use fixed to stay below navbar */
     top: 5.5rem !important;
-    /* Below header (2.75rem) + tabs (2.75rem) */
+    /* Below header (2.75rem) + tabs (2.75rem) = 5.5rem */
+    left: 0 !important;
     height: calc(100vh - 5.5rem) !important;
     /* Fill remaining viewport */
     max-height: calc(100vh - 5.5rem) !important;
@@ -1633,6 +1641,13 @@ html .md-tabs {
    (Navbar remains consistent across all pages)
    ============================================ */
 
+/* Hide left sidebar for Homepage (index) */
+body[data-md-path=""] .md-content,
+body[data-md-path="/"] .md-content {
+    margin-left: 0 !important;
+    /* No sidebar on homepage */
+}
+
 /* Hide left sidebar for Community and Contributing pages */
 body[data-md-path="community/"],
 body[data-md-path="contributing/"] {
@@ -1645,6 +1660,7 @@ body[data-md-path="contributing/"] {
     /* Center the content by removing sidebar space */
     .md-content {
         margin-left: 0 !important;
+        /* Remove sidebar margin */
         max-width: 100% !important;
         /* Keep navbar padding - don't override */
         padding-top: 5.5rem !important;
@@ -1670,6 +1686,7 @@ body[data-md-path="contributing/"] {
 [data-md-component="container"]:has([title="Community"]) .md-content,
 [data-md-component="container"]:has([title="Contributing"]) .md-content {
     margin-left: 0 !important;
+    /* Remove sidebar margin */
     max-width: 100% !important;
     /* Keep navbar padding */
     padding-top: 5.5rem !important;
