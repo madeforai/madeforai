@@ -402,6 +402,8 @@ body[data-md-path] .md-main {
 .md-container {
     display: flex !important;
     flex-direction: column !important;
+    position: relative !important;
+    /* Required for absolute positioned sidebar */
 }
 
 .md-main__inner {
@@ -409,6 +411,10 @@ body[data-md-path] .md-main {
     flex-direction: row !important;
     margin-top: 5.5rem !important;
     /* Space for navbar */
+    position: relative !important;
+    /* Required for absolute positioned sidebar */
+    min-height: calc(100vh - 5.5rem) !important;
+    /* Ensure container is tall enough */
 }
 
 /* Adjust when navbar is compact */
@@ -1098,15 +1104,17 @@ html .md-tabs {
     box-shadow: 2px 0 8px rgba(0, 0, 0, 0.05) !important;
     /* Subtle shadow for depth */
 
-    /* Positioning - CRITICAL - FIXED to prevent overlap */
-    position: fixed !important;
-    /* Use fixed to stay below navbar */
-    top: 5.5rem !important;
-    /* Below header (2.75rem) + tabs (2.75rem) = 5.5rem */
+    /* Positioning - CRITICAL - Use absolute positioning within container */
+    position: absolute !important;
+    /* Use absolute instead of fixed */
+    top: 0 !important;
+    /* Start at top of container (which is already below navbar) */
     left: 0 !important;
-    height: calc(100vh - 5.5rem) !important;
-    /* Fill remaining viewport */
-    max-height: calc(100vh - 5.5rem) !important;
+    bottom: 0 !important;
+    /* Stop at bottom of container (before footer) */
+    height: auto !important;
+    /* Let bottom property control height */
+    max-height: none !important;
     overflow-y: auto !important;
     overflow-x: hidden !important;
 
@@ -1116,9 +1124,7 @@ html .md-tabs {
     /* Below navbar (99-100) but above content */
 
     /* Smooth transitions */
-    transition: top 0.25s cubic-bezier(0.4, 0, 0.2, 1),
-        height 0.25s cubic-bezier(0.4, 0, 0.2, 1),
-        transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
         opacity 0.3s ease;
 }
 
@@ -1130,13 +1136,7 @@ html .md-tabs {
     overflow-x: hidden !important;
 }
 
-/* Adjust sidebar position when navbar is compact (scrolled) */
-.md-header--shadow~.md-container .md-sidebar--primary {
-    top: 2.5rem !important;
-    /* Below compact single-row navbar */
-    height: calc(100vh - 2.5rem) !important;
-    max-height: calc(100vh - 2.5rem) !important;
-}
+/* Remove the scrolled adjustment - not needed with absolute positioning */
 
 /* Sidebar inner padding - reduced */
 .md-sidebar__inner {
@@ -1385,18 +1385,12 @@ html .md-tabs {
    ============================================ */
 @media (max-width: 768px) {
     .md-sidebar--primary {
-        top: 5rem !important;
-        /* Below mobile navbar (2.5rem header + 2.5rem tabs) */
-        height: calc(100vh - 5rem) !important;
-        max-height: calc(100vh - 5rem) !important;
-    }
-
-    /* Adjust when scrolled on mobile */
-    .md-header--shadow~.md-container .md-sidebar--primary {
-        top: 2.25rem !important;
-        /* Below compact mobile navbar */
-        height: calc(100vh - 2.25rem) !important;
-        max-height: calc(100vh - 2.25rem) !important;
+        /* Keep absolute positioning on mobile */
+        position: absolute !important;
+        top: 0 !important;
+        bottom: 0 !important;
+        height: auto !important;
+        max-height: none !important;
     }
 }
 
