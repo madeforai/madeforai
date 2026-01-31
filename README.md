@@ -1,177 +1,213 @@
 # MadeForAI
 
-The definitive guide to Generative AI engineering. From prompt engineering basics to scalable architecture optimization for enterprise.
+> The Applied Generative AI Engineering Handbook
 
-## 🚀 Quick Start
+**Open-source, interactive learning platform for mastering Generative AI engineering** — from tensor basics to production-grade RAG systems.
+
+🌐 **Live Site:** [madeforai.github.io/madeforai](https://madeforai.github.io/madeforai)
+
+---
+
+## 🎯 What is MadeForAI?
+
+A code-first, hands-on curriculum designed to take you from AI fundamentals to deploying production-ready LLM applications. Built with interactive Jupyter notebooks, real-world projects, and a vibrant community.
+
+### Key Features
+
+- **5 Learning Paths** — Understanding AI, Engineering AI, Researching AI, Architecting AI, Business AI
+- **50+ Interactive Lessons** — Jupyter notebooks with live code execution
+- **200+ Hands-on Exercises** — Learn by building, not just reading
+- **Production-Ready Projects** — RAG systems, model deployment, API development
+- **Modern AI Stack** — PyTorch, Hugging Face, vLLM, FastAPI, Weights & Biases
+- **2026 SEO Optimized** — Full Open Graph, Twitter Cards, and structured data
+- **Social Media Ready** — Optimized previews for all platforms
+
+---
+
+## � Quick Start
+
+### Local Development
 
 ```bash
+# Clone the repository
+git clone https://github.com/madeforai/madeforai.git
+cd madeforai
+
+# Create virtual environment
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+
 # Install dependencies
 pip install -r requirements.txt
 
 # Serve locally
 mkdocs serve
+```
 
-# Build for production
+Visit `http://127.0.0.1:8000` to view the site locally.
+
+### Build for Production
+
+```bash
 mkdocs build
 ```
 
-Visit `http://127.0.0.1:8000` to view the site.
+The static site will be generated in the `site/` directory.
+
+---
 
 ## 📚 Learning Paths
 
 ### 🎓 Understanding AI
-From absolute beginner to AI enthusiast. Build a solid foundation in AI fundamentals.
-
+**For:** Absolute beginners to AI enthusiasts  
 **Prerequisites:** Basic Python, High school mathematics  
-**Path:** `/paths/understanding-ai/`
+**Learn:** AI fundamentals, neural networks, LLMs, prompt engineering
 
 ### 💻 Engineering AI
-Build production-ready LLM applications with transformer architecture and fine-tuning.
-
+**For:** Developers building LLM applications  
 **Prerequisites:** Python experience, Basic ML concepts  
-**Path:** `/paths/engineering-ai/`
+**Learn:** Transformer architecture, fine-tuning (LoRA/QLoRA), RAG systems, deployment
 
 ### 🔬 Researching AI
-Push the boundaries of AI innovation through cutting-edge research.
-
+**For:** Researchers pushing AI boundaries  
 **Prerequisites:** Strong math background, Deep learning fundamentals  
-**Path:** `/paths/researching-ai/`
+**Learn:** Paper implementation, novel architectures, rigorous experimentation
 
 ### 🏗️ Architecting AI
-Design scalable AI systems with proper infrastructure and monitoring.
-
+**For:** System designers and architects  
 **Prerequisites:** System design experience, Cloud infrastructure knowledge  
-**Path:** `/paths/architecting-ai/`
+**Learn:** Scalable architectures, infrastructure choices, monitoring, cost optimization
 
 ### 💼 Business AI
-Lead AI strategy and transformation without diving into technical details.
-
+**For:** Business leaders and strategists  
 **Prerequisites:** No technical background required  
-**Path:** `/paths/business-ai/`
+**Learn:** AI strategy, use case identification, build vs. buy decisions, team building
 
-## 🎨 Design Philosophy
+---
 
-### Performance First
-- **No page loaders** - Instant transitions for optimal UX
-- **Optimized JavaScript** - Throttled scroll handlers, debounced events
-- **Minimal CSS** - Consolidated styles, removed redundancies
-- **Fast builds** - Minified HTML/CSS/JS in production
+## 🛠️ Tech Stack
 
-### Consistent Design
-- **Universal navbar** - Single-row merge on scroll across all pages
-- **Standardized layouts** - All path pages follow the same structure
-- **Color-coded paths** - Each learning path has its unique color scheme
-- **Responsive** - Mobile-first design that works everywhere
+- **[MkDocs Material](https://squidfunk.github.io/mkdocs-material/)** — Documentation framework
+- **[Jupyter Notebooks](https://jupyter.org/)** — Interactive learning content
+- **Python** — Build automation and hooks
+- **GitHub Pages** — Free hosting and deployment
+- **GitHub Actions** — Automated CI/CD pipeline
+- **Custom Logo** — Dynamic SVG with animated pulse wave
+- **SEO & Social** — Open Graph, Twitter Cards, JSON-LD structured data
 
-### Clean Codebase
-- **No old documentation** - Removed outdated MD files from root
-- **Organized structure** - Clear separation of concerns
-- **Well-commented** - Code explains itself with minimal comments
-- **Production-ready** - Professional, maintainable code
+---
 
 ## 📁 Project Structure
 
 ```
 madeforai/
-├── docs/
-│   ├── index.md                    # Homepage
-│   ├── paths/                      # Learning paths
-│   │   ├── understanding-ai/       # Beginner path
-│   │   ├── engineering-ai/         # Engineering path
-│   │   ├── researching-ai/         # Research path
-│   │   ├── architecting-ai/        # Architecture path
-│   │   └── business-ai/            # Business path
-│   ├── javascripts/                # Optimized JS
-│   │   ├── navbar-enhancer.js      # Navbar behavior
-│   │   ├── sidebar-enhancer.js     # Sidebar cleanup
-│   │   ├── page-layout-enhancer.js # Layout adjustments
-│   │   ├── notebook-enhanced.js    # Jupyter notebook styling
-│   │   └── page-loader.js          # Removed (instant transitions)
-│   ├── stylesheets/
-│   │   ├── css/
-│   │   │   ├── custom.css          # Main styles
-│   │   │   ├── extra.css           # Additional styles
-│   │   │   └── page-loader.css     # Minimal transition styles
-│   │   └── notebook-enhanced.css   # Notebook styling
-│   ├── hooks/                      # MkDocs hooks
-│   │   ├── notebook_enhancer.py    # Jupyter notebook processing
-│   │   └── path_generator.py       # Dynamic path generation
-│   ├── community/                  # Community page
-│   ├── about/                      # About page
-│   └── contributing/               # Contributing guide
-├── overrides/
-│   └── main.html                   # Theme overrides
-├── mkdocs.yml                      # MkDocs configuration
-├── requirements.txt                # Python dependencies
-└── README.md                       # This file
+├── docs/                       # Documentation source
+│   ├── index.md               # Homepage
+│   ├── assets/                # Logo, favicons, social previews
+│   ├── paths/                 # Learning paths
+│   │   ├── understanding-ai/
+│   │   ├── engineering-ai/
+│   │   ├── researching-ai/
+│   │   ├── architecting-ai/
+│   │   └── business-ai/
+│   ├── javascripts/           # Custom JS (optimized)
+│   ├── stylesheets/           # Custom CSS
+│   ├── hooks/                 # MkDocs build hooks
+│   │   ├── notebook_enhancer.py
+│   │   └── path_generator.py
+│   ├── community/
+│   ├── contributing/
+│   ├── robots.txt             # SEO directives
+│   └── site.webmanifest       # PWA manifest
+├── overrides/                 # Theme customizations
+│   ├── main.html              # Main template
+│   └── partials/
+│       ├── meta.html          # SEO meta tags
+│       └── footer.html        # Custom footer
+├── .github/workflows/         # CI/CD automation
+├── mkdocs.yml                 # MkDocs configuration
+├── requirements.txt           # Python dependencies
+├── generate_favicons.py       # Favicon generator
+├── setup_social_seo.sh        # Automated setup script
+├── SOCIAL_MEDIA_SEO_GUIDE.md  # Complete SEO documentation
+├── QUICK_REFERENCE_SOCIAL_SEO.md  # Quick reference
+└── README.md                  # This file
 ```
 
-## 🛠️ Technical Stack
+---
 
-- **MkDocs Material** - Modern documentation framework
-- **Jupyter Notebooks** - Interactive learning content
-- **Python** - Build scripts and hooks
-- **JavaScript** - Enhanced interactivity (optimized)
-- **CSS** - Custom styling (consolidated)
+## 🤝 Contributing
 
-## 🎯 Key Features
+We welcome contributions! Whether you're fixing typos, adding content, or building new features — all help is appreciated.
 
-### Navbar
-- **Fixed position** - Always accessible
-- **Single-row merge** - Compact on scroll
-- **Active tab highlighting** - Clear visual feedback
-- **No borders** - Clean, modern look
+### Ways to Contribute
 
-### Sidebar
-- **Color-coded modules** - Easy visual navigation
-- **Clean chapter titles** - Removed redundant prefixes
-- **Compact design** - More content visible
-- **Smooth scrolling** - Optimized performance
+- 🐛 Report bugs via [GitHub Issues](https://github.com/madeforai/madeforai/issues)
+- ✨ Suggest features or improvements
+- 📝 Fix typos and improve documentation
+- 📚 Create new tutorials and lessons
+- 🌍 Translate content to other languages
+- 🎨 Improve design and UX
 
-### Content Pages
-- **Instant loading** - No artificial delays
-- **Consistent layout** - Same structure across all paths
-- **Module cards** - Clear progression through content
-- **Coming soon badges** - Transparent about what's available
+### Development Workflow
 
-### Performance
-- **Throttled scroll** - 60fps smooth scrolling
-- **Debounced events** - Reduced unnecessary calculations
-- **RequestAnimationFrame** - GPU-accelerated animations
-- **Minified assets** - Smaller file sizes in production
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Make your changes
+4. Test locally with `mkdocs serve`
+5. Commit your changes (`git commit -m 'Add amazing feature'`)
+6. Push to your branch (`git push origin feature/amazing-feature`)
+7. Open a Pull Request
 
-## 🚀 Deployment
+See [CONTRIBUTING.md](https://madeforai.github.io/madeforai/contributing/) for detailed guidelines.
 
-### GitHub Pages
+---
+
+## 🌐 Community & Support
+
+Join our growing community of AI engineers and enthusiasts:
+
+- **Discord:** [discord.gg/UycUrRfm](https://discord.gg/UycUrRfm) — Real-time help, study groups, weekly events
+- **GitHub:** [github.com/madeforai/madeforai](https://github.com/madeforai/madeforai) — Source code, issues, discussions
+- **X (Twitter):** [@MadeForAI_](https://x.com/MadeForAI_) — Latest AI trends and updates
+- **LinkedIn:** [linkedin.com/company/madeforai](https://www.linkedin.com/company/madeforai/about/) — Professional network and company updates
+- **Email:** [lmfastai@gmail.com](mailto:lmfastai@gmail.com) — Direct contact
+
+---
+
+## � Deployment
+
+### Automated Deployment (Recommended)
+
+The site automatically deploys to GitHub Pages when you push to the `main` branch via GitHub Actions.
+
+**Workflow:** `.github/workflows/deploy.yml`
+
+### Manual Deployment
+
 ```bash
 mkdocs gh-deploy
 ```
 
-### Custom Domain
-Update `site_url` in `mkdocs.yml` and add `CNAME` file.
+This builds the site and pushes it to the `gh-pages` branch.
 
-## 🤝 Contributing
-
-We welcome contributions! See [CONTRIBUTING.md](contributing/index.md) for guidelines.
-
-### Development Workflow
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Test locally with `mkdocs serve`
-5. Submit a pull request
+---
 
 ## 📝 License
 
 Copyright © 2026 MadeForAI Inc. All rights reserved.
 
-## 🔗 Links
+---
 
-- **Website:** [madeforai.github.io/madeforai](https://madeforai.github.io/madeforai)
-- **GitHub:** [github.com/madeforai/madeforai](https://github.com/madeforai/madeforai)
-- **Discord:** [discord.gg/madeforai](https://discord.gg/madeforai)
-- **Twitter:** [@madeforai](https://twitter.com/madeforai)
+## 🙏 Acknowledgments
+
+Built with ❤️ by the MadeForAI team and our amazing community of contributors.
+
+Special thanks to:
+- The MkDocs Material team for the excellent documentation framework
+- The Jupyter team for interactive notebook support
+- Our community members for feedback and contributions
 
 ---
 
-**Built with ❤️ by the MadeForAI team**
+**Ready to master GenAI?** [Start Learning →](https://madeforai.github.io/madeforai)

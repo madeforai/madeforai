@@ -59,7 +59,6 @@
         // Set timeout to force completion
         clearTimeout(navigationTimer);
         navigationTimer = setTimeout(() => {
-            console.warn('Navigation timeout - forcing completion');
             forceCompleteNavigation();
         }, CONFIG.MAX_NAVIGATION_TIME);
     }
@@ -108,7 +107,6 @@
             // Set timeout for all XHR requests
             const timeout = setTimeout(() => {
                 if (xhr.readyState !== 4) {
-                    console.warn('XHR timeout:', xhr._url);
                     xhr.abort();
                     forceCompleteNavigation();
                 }
@@ -139,7 +137,6 @@
             // Add timeout to all fetch requests
             const controller = new AbortController();
             const timeoutId = setTimeout(() => {
-                console.warn('Fetch timeout:', url);
                 controller.abort();
                 forceCompleteNavigation();
             }, CONFIG.MAX_NAVIGATION_TIME);

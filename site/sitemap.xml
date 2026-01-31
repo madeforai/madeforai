@@ -2,58 +2,54 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://madeforai.github.io/madeforai/</loc>
-         <lastmod>2026-01-30</lastmod>
+         <lastmod>2026-01-31</lastmod>
     </url>
     <url>
          <loc>https://madeforai.github.io/madeforai/community/</loc>
-         <lastmod>2026-01-30</lastmod>
+         <lastmod>2026-01-31</lastmod>
     </url>
     <url>
          <loc>https://madeforai.github.io/madeforai/contributing/</loc>
-         <lastmod>2026-01-30</lastmod>
-    </url>
-    <url>
-         <loc>https://madeforai.github.io/madeforai/hooks/</loc>
-         <lastmod>2026-01-30</lastmod>
+         <lastmod>2026-01-31</lastmod>
     </url>
     <url>
          <loc>https://madeforai.github.io/madeforai/hooks/notebook_enhancer/</loc>
-         <lastmod>2026-01-30</lastmod>
+         <lastmod>2026-01-31</lastmod>
     </url>
     <url>
          <loc>https://madeforai.github.io/madeforai/hooks/path_generator/</loc>
-         <lastmod>2026-01-30</lastmod>
+         <lastmod>2026-01-31</lastmod>
     </url>
     <url>
          <loc>https://madeforai.github.io/madeforai/paths/architecting-ai/</loc>
-         <lastmod>2026-01-30</lastmod>
+         <lastmod>2026-01-31</lastmod>
     </url>
     <url>
          <loc>https://madeforai.github.io/madeforai/paths/business-ai/</loc>
-         <lastmod>2026-01-30</lastmod>
+         <lastmod>2026-01-31</lastmod>
     </url>
     <url>
          <loc>https://madeforai.github.io/madeforai/paths/engineering-ai/</loc>
-         <lastmod>2026-01-30</lastmod>
+         <lastmod>2026-01-31</lastmod>
     </url>
     <url>
-         <loc>https://madeforai.github.io/madeforai/paths/engineering-ai/01-transformer-architecture/</loc>
-         <lastmod>2026-01-30</lastmod>
+         <loc>https://madeforai.github.io/madeforai/paths/engineering-ai/1.1-transformer-architecture/</loc>
+         <lastmod>2026-01-31</lastmod>
     </url>
     <url>
          <loc>https://madeforai.github.io/madeforai/paths/researching-ai/</loc>
-         <lastmod>2026-01-30</lastmod>
+         <lastmod>2026-01-31</lastmod>
     </url>
     <url>
          <loc>https://madeforai.github.io/madeforai/paths/understanding-ai/</loc>
-         <lastmod>2026-01-30</lastmod>
+         <lastmod>2026-01-31</lastmod>
     </url>
     <url>
-         <loc>https://madeforai.github.io/madeforai/paths/understanding-ai/1-foundations/chapter-1-ai-ml-intro/</loc>
-         <lastmod>2026-01-30</lastmod>
+         <loc>https://madeforai.github.io/madeforai/paths/understanding-ai/module-1-foundations/1.1-ai-ml-intro/</loc>
+         <lastmod>2026-01-31</lastmod>
     </url>
     <url>
-         <loc>https://madeforai.github.io/madeforai/paths/understanding-ai/1-foundations/chapter-2-first-neural-network/</loc>
-         <lastmod>2026-01-30</lastmod>
+         <loc>https://madeforai.github.io/madeforai/paths/understanding-ai/module-1-foundations/1.2-first-neural-network/</loc>
+         <lastmod>2026-01-31</lastmod>
     </url>
 </urlset>

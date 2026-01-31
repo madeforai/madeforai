@@ -2,6 +2,7 @@ site_name: MadeForAI
 site_description: The definitive guide to Generative AI engineering. From prompt engineering basics to scalable architecture optimization for enterprise.
 site_author: MadeForAI Team
 site_url: https://madeforai.github.io/madeforai
+use_directory_urls: true
 
 repo_name: madeforai/madeforai
 repo_url: https://github.com/madeforai/madeforai
@@ -51,20 +52,9 @@ theme:
   
   icon:
     repo: fontawesome/brands/github
-    logo: material/robot-excited
-    admonition:
-      note: fontawesome/solid/note-sticky
-      abstract: fontawesome/solid/book
-      info: fontawesome/solid/circle-info
-      tip: fontawesome/solid/bullhorn
-      success: fontawesome/solid/check
-      question: fontawesome/solid/circle-question
-      warning: fontawesome/solid/triangle-exclamation
-      failure: fontawesome/solid/bomb
-      danger: fontawesome/solid/skull
-      bug: fontawesome/solid/robot
-      example: fontawesome/solid/flask
-      quote: fontawesome/solid/quote-left
+  
+  logo: assets/logo.svg
+  favicon: assets/logo.svg
 
 extra:
   social:
@@ -72,15 +62,18 @@ extra:
       link: https://github.com/madeforai
       name: MadeForAI on GitHub
     - icon: fontawesome/brands/discord
-      link: https://discord.gg/madeforai
+      link: https://discord.gg/UycUrRfm
       name: Join our Discord
     - icon: fontawesome/brands/x-twitter
-      link: https://twitter.com/madeforai
+      link: https://x.com/MadeForAI_
       name: Follow us on X
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/company/madeforai/about/
+      name: Connect on LinkedIn
   
   analytics:
     provider: google
-    property: G-XXXXXXXXXX
+    property: G-GFX72HCYMH
     feedback:
       title: Was this page helpful?
       ratings:
@@ -92,6 +85,9 @@ extra:
           name: This page could be improved
           data: 0
           note: Thanks for your feedback! Help us improve by using our feedback form.
+  
+  # SEO and social media
+  generator: false  # Remove "Made with Material for MkDocs" footer
   
   # Version provider removed - causes 404 errors for versions.json
   # version:
@@ -214,12 +210,13 @@ nav:
   - MadeforAI: index.md
   - Understanding AI:
       - paths/understanding-ai/index.md
-      - Foundations:
-          - Introduction to AI, ML & Deep Learning: paths/understanding-ai/1-foundations/chapter-1-ai-ml-intro.ipynb
-          - Your First Neural Network: paths/understanding-ai/1-foundations/chapter-2-first-neural-network.ipynb
+      - 1 - Foundations:
+          - 1.1 - Introduction to AI, ML & Deep Learning: paths/understanding-ai/module-1-foundations/1.1-ai-ml-intro.ipynb
+          - 1.2 - Your First Neural Network: paths/understanding-ai/module-1-foundations/1.2-first-neural-network.ipynb
   - Engineering AI:
       - paths/engineering-ai/index.md
-      - Transformer Architecture: paths/engineering-ai/01-transformer-architecture.ipynb
+      - 1 - Transformer Architecture:
+          - 1.1 - Transformer Architecture: paths/engineering-ai/1.1-transformer-architecture.ipynb
   - Researching AI:
       - paths/researching-ai/index.md
   - Architecting AI:

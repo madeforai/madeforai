@@ -1,0 +1,152 @@
+<!-- SEO & Social Media Meta Tags - 2026 Optimized -->
+
+<!-- Primary Meta Tags -->
+<meta name="title" content="{% if page and page.title %}{{ page.title }} - {% endif %}{{ config.site_name }}">
+<meta name="description" content="{% if page and page.meta and page.meta.description %}{{ page.meta.description }}{% else %}{{ config.site_description }}{% endif %}">
+<meta name="keywords" content="{% if page and page.meta and page.meta.keywords %}{{ page.meta.keywords }}{% else %}generative AI, AI engineering, machine learning, deep learning, transformers, LLMs, prompt engineering, AI architecture, neural networks, AI education{% endif %}">
+<meta name="author" content="{{ config.site_author }}">
+<meta name="robots" content="index, follow">
+<meta name="language" content="English">
+<meta name="revisit-after" content="7 days">
+
+<!-- Canonical URL -->
+{% if page and page.canonical_url %}
+<link rel="canonical" href="{{ page.canonical_url }}">
+{% else %}
+<link rel="canonical" href="{{ config.site_url }}">
+{% endif %}
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="{% if page and page.is_homepage %}website{% else %}article{% endif %}">
+<meta property="og:url" content="{% if page and page.canonical_url %}{{ page.canonical_url }}{% else %}{{ config.site_url }}{% endif %}">
+<meta property="og:title" content="{% if page and page.title %}{{ page.title }} - {% endif %}{{ config.site_name }}">
+<meta property="og:description" content="{% if page and page.meta and page.meta.description %}{{ page.meta.description }}{% else %}{{ config.site_description }}{% endif %}">
+<meta property="og:image" content="{{ config.site_url }}/assets/social-preview.svg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="MadeForAI - Master the GenAI Frontier">
+<meta property="og:site_name" content="{{ config.site_name }}">
+<meta property="og:locale" content="en_US">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="{% if page and page.canonical_url %}{{ page.canonical_url }}{% else %}{{ config.site_url }}{% endif %}">
+<meta name="twitter:title" content="{% if page and page.title %}{{ page.title }} - {% endif %}{{ config.site_name }}">
+<meta name="twitter:description" content="{% if page and page.meta and page.meta.description %}{{ page.meta.description }}{% else %}{{ config.site_description }}{% endif %}">
+<meta name="twitter:image" content="{{ config.site_url }}/assets/social-preview.svg">
+<meta name="twitter:image:alt" content="MadeForAI - Master the GenAI Frontier">
+<meta name="twitter:site" content="@MadeForAI_">
+<meta name="twitter:creator" content="@MadeForAI_">
+
+<!-- Additional Social Meta -->
+<meta property="article:publisher" content="https://www.linkedin.com/company/madeforai/about/">
+<meta property="article:author" content="{{ config.site_author }}">
+{% if page and page.meta and page.meta.date %}
+<meta property="article:published_time" content="{{ page.meta.date }}">
+{% endif %}
+
+<!-- Favicons - Multi-size for all devices -->
+<link rel="icon" type="image/svg+xml" href="{{ config.site_url }}/assets/logo.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="{{ config.site_url }}/assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="{{ config.site_url }}/assets/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="{{ config.site_url }}/assets/apple-touch-icon.png">
+<link rel="manifest" href="{{ config.site_url }}/site.webmanifest">
+<meta name="theme-color" content="#FF6B35">
+<meta name="msapplication-TileColor" content="#FF6B35">
+
+<!-- Structured Data - JSON-LD Schema.org -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "{% if page and page.is_homepage %}WebSite{% else %}Article{% endif %}",
+  "name": "{{ config.site_name }}",
+  "url": "{% if page and page.canonical_url %}{{ page.canonical_url }}{% else %}{{ config.site_url }}{% endif %}",
+  "description": "{% if page and page.meta and page.meta.description %}{{ page.meta.description }}{% else %}{{ config.site_description }}{% endif %}",
+  "publisher": {
+    "@type": "Organization",
+    "name": "{{ config.site_name }}",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "{{ config.site_url }}/assets/logo.svg"
+    },
+    "sameAs": [
+      "https://github.com/madeforai",
+      "https://x.com/MadeForAI_",
+      "https://www.linkedin.com/company/madeforai/about/",
+      "https://discord.gg/UycUrRfm"
+    ]
+  },
+  {% if page and page.is_homepage %}
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "{{ config.site_url }}/search/?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  },
+  {% endif %}
+  "author": {
+    "@type": "Organization",
+    "name": "{{ config.site_author }}"
+  },
+  "inLanguage": "en-US",
+  "image": "{{ config.site_url }}/assets/social-preview.svg"
+}
+</script>
+
+<!-- Educational Organization Schema -->
+{% if page and page.is_homepage %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "EducationalOrganization",
+  "name": "{{ config.site_name }}",
+  "url": "{{ config.site_url }}",
+  "logo": "{{ config.site_url }}/assets/logo.svg",
+  "description": "{{ config.site_description }}",
+  "sameAs": [
+    "https://github.com/madeforai",
+    "https://x.com/MadeForAI_",
+    "https://www.linkedin.com/company/madeforai/about/",
+    "https://discord.gg/UycUrRfm"
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "Customer Support",
+    "email": "lmfastai@gmail.com"
+  }
+}
+</script>
+{% endif %}
+
+<!-- Breadcrumb Schema -->
+{% if page and not page.is_homepage %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "{{ config.site_url }}"
+    }
+    {% if page.ancestors %}
+    {% for ancestor in page.ancestors %}
+    ,{
+      "@type": "ListItem",
+      "position": {{ loop.index + 1 }},
+      "name": "{{ ancestor.title }}",
+      "item": "{{ ancestor.canonical_url }}"
+    }
+    {% endfor %}
+    {% endif %}
+    ,{
+      "@type": "ListItem",
+      "position": {{ (page.ancestors|length) + 2 }},
+      "name": "{{ page.title }}",
+      "item": "{{ page.canonical_url }}"
+    }
+  ]
+}
+</script>
+{% endif %}

@@ -1,0 +1,18 @@
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://madeforai.github.io/madeforai/sitemap.xml
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1
+
+# Disallow admin/build directories
+Disallow: /site/
+Disallow: /.git/
+Disallow: /.github/
+
+# Allow all learning paths
+Allow: /paths/
+Allow: /community/
+Allow: /contributing/

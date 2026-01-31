@@ -1,5 +1,43 @@
 /* Custom styling for MadeForAI - OPTIMIZED */
 
+/* Logo Styling */
+.md-header__button.md-logo img,
+.md-header__button.md-logo svg {
+    width: 32px;
+    height: 32px;
+    display: block;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 0.75rem;
+}
+
+.footer-logo-icon {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 12px;
+    width: 32px;
+    height: 32px;
+}
+
+/* Ensure logo works in both light and dark modes */
+[data-md-color-scheme="default"] .md-header__button.md-logo img {
+    filter: none;
+}
+
+[data-md-color-scheme="slate"] .md-header__button.md-logo img {
+    filter: brightness(1.2);
+}
+
+[data-md-color-scheme="slate"] .footer-logo {
+    color: #ffffff;
+}
+
 /* Hide git revision date timestamps and icons - COMPREHENSIVE */
 .md-source-date,
 .md-source-date__source,
@@ -1613,4 +1651,207 @@ body[data-md-path="contributing/"] .md-header--shadow ~ .md-main .md-content {
         padding-right: 1.5rem !important;
         padding-top: 1rem !important;
     }
+}
+
+/* Footer - Minimal & Polished */
+.custom-footer {
+    padding: 3rem 1rem 2rem;
+    background: #ffffff;
+    border-top: 1px solid #e2e8f0;
+}
+
+.footer-container {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.footer-brand {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.footer-logo-icon {
+    font-size: 1.5rem;
+    color: #2463eb;
+}
+
+.footer-tagline {
+    font-size: 0.875rem;
+    color: #64748b;
+    margin: 0;
+}
+
+.footer-links {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.footer-links a {
+    font-size: 0.875rem;
+    color: #64748b;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+    white-space: nowrap;
+}
+
+.footer-links a:hover {
+    color: #2463eb;
+}
+
+.footer-social {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+}
+
+.footer-social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 50%;
+    color: #64748b;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.footer-social-link svg {
+    width: 18px;
+    height: 18px;
+}
+
+.footer-social-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.footer-social-link:nth-child(1):hover {
+    background: #24292e;
+    border-color: #24292e;
+    color: #ffffff;
+}
+
+.footer-social-link:nth-child(2):hover {
+    background: #5865F2;
+    border-color: #5865F2;
+    color: #ffffff;
+}
+
+.footer-social-link:nth-child(3):hover {
+    background: #000000;
+    border-color: #000000;
+    color: #ffffff;
+}
+
+.footer-social-link:nth-child(4):hover {
+    background: #0077b5;
+    border-color: #0077b5;
+    color: #ffffff;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 2rem;
+    border-top: 1px solid #f1f5f9;
+}
+
+.footer-copyright {
+    font-size: 0.8125rem;
+    color: #94a3b8;
+    margin: 0;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+        text-align: center;
+    }
+    
+    .footer-brand {
+        align-items: center;
+    }
+    
+    .footer-links {
+        flex-direction: row;
+        gap: 1rem;
+        justify-content: center;
+        max-width: 100%;
+    }
+    
+    .footer-links a {
+        font-size: 0.8125rem;
+    }
+    
+    .footer-social {
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-links {
+        gap: 0.75rem;
+    }
+    
+    .footer-links a {
+        font-size: 0.75rem;
+    }
+    
+    .footer-social-link {
+        width: 34px;
+        height: 34px;
+    }
+    
+    .footer-social-link svg {
+        width: 16px;
+        height: 16px;
+    }
+}
+
+
+/* ===========================
+   HIDE FEEDBACK WIDGET
+   =========================== */
+
+/* Hide feedback widget on all pages */
+.md-feedback {
+    display: none !important;
+    visibility: hidden !important;
+}
+
+/* Hide source file info */
+.md-source-file {
+    display: none !important;
+    visibility: hidden !important;
 }

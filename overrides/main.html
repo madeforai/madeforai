@@ -5,6 +5,18 @@
 {% endblock %}
 
 {% block extrahead %}
+<!-- Google tag (gtag.js) - Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GFX72HCYMH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-GFX72HCYMH');
+</script>
+
+<!-- Include comprehensive meta tags -->
+{% include "partials/meta.html" %}
+
 <!-- Fonts - Optimized with font-display swap -->
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>

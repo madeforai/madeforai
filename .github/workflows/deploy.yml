@@ -34,13 +34,16 @@ jobs:
           python-version: '3.11'
           cache: 'pip'
       
-      - name: Cache dependencies
-        uses: actions/cache@v3
+      - name: Cache MkDocs build
+        uses: actions/cache@v4
         with:
-          path: ~/.cache/pip
-          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+          path: |
+            ~/.cache/pip
+            .cache
+          key: ${{ runner.os }}-mkdocs-${{ hashFiles('**/requirements.txt') }}-${{ hashFiles('docs/**') }}
           restore-keys: |
-            ${{ runner.os }}-pip-
+            ${{ runner.os }}-mkdocs-${{ hashFiles('**/requirements.txt') }}-
+            ${{ runner.os }}-mkdocs-
       
       - name: Install dependencies
         run: |
