@@ -146,117 +146,6 @@ article {
     font-weight: 400;
 }
 
-/* Hero Tracks Section */
-.hero-tracks-container {
-    margin-bottom: 3rem;
-    width: 100%;
-}
-
-.hero-tracks-label {
-    font-size: 0.875rem;
-    font-weight: 600;
-    color: #64748b;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    margin-bottom: 1.5rem;
-}
-
-.hero-tracks {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.75rem;
-    justify-content: center;
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-.track-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.75rem 1.5rem;
-    border-radius: 9999px;
-    font-weight: 600;
-    font-size: 0.875rem;
-    text-decoration: none;
-    transition: all 0.2s ease;
-    border: 1px solid transparent;
-}
-
-.track-btn .material-symbols-outlined {
-    font-size: 1.125rem;
-}
-
-.track-blue {
-    background: #eff6ff;
-    color: #2563eb;
-    border-color: #dbeafe;
-}
-
-.track-blue:hover {
-    background: #2563eb;
-    color: #ffffff;
-    border-color: #2563eb;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
-}
-
-.track-indigo {
-    background: #eef2ff;
-    color: #4f46e5;
-    border-color: #e0e7ff;
-}
-
-.track-indigo:hover {
-    background: #4f46e5;
-    color: #ffffff;
-    border-color: #4f46e5;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
-}
-
-.track-purple {
-    background: #f5f3ff;
-    color: #7c3aed;
-    border-color: #ede9fe;
-}
-
-.track-purple:hover {
-    background: #7c3aed;
-    color: #ffffff;
-    border-color: #7c3aed;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(124, 58, 237, 0.3);
-}
-
-.track-orange {
-    background: #fff7ed;
-    color: #ea580c;
-    border-color: #fed7aa;
-}
-
-.track-orange:hover {
-    background: #ea580c;
-    color: #ffffff;
-    border-color: #ea580c;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(234, 88, 12, 0.3);
-}
-
-.track-green {
-    background: #ecfdf5;
-    color: #059669;
-    border-color: #d1fae5;
-}
-
-.track-green:hover {
-    background: #059669;
-    color: #ffffff;
-    border-color: #059669;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(5, 150, 105, 0.3);
-}
-
 .hero-buttons {
     display: flex;
     gap: 1rem;
@@ -908,16 +797,6 @@ article {
 @media (max-width: 640px) {
     .hero-section {
         padding: 3rem 1rem;
-    }
-    
-    .hero-tracks {
-        flex-direction: column;
-        align-items: stretch;
-    }
-    
-    .track-btn {
-        width: 100%;
-        justify-content: center;
     }
     
     .hero-buttons {

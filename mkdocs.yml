@@ -95,7 +95,6 @@ extra:
   #   default: latest
 
 extra_css:
-  - stylesheets/css/tailwind-custom.css
   - stylesheets/css/extra.css
   - stylesheets/css/custom.css
   - stylesheets/notebook-enhanced.css
