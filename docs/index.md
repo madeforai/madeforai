@@ -8,6 +8,9 @@ hide:
   - path
 ---
 
+<!-- Main Content Wrapper to ensure rendering -->
+<div class="main-content-wrapper">
+
 <style>
 .md-content {
     max-width: 100%;
@@ -1039,3 +1042,5 @@ article {
         </div>
     </div>
 </section>
+
+</div>
