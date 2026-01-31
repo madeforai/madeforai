@@ -7,10 +7,7 @@ hide:
   - toc
   - path
 
-git_revision_date_localized:
-  enabled: false
-git_creation_date_localized:
-  enabled: false
+
 ---
 
 <style>
