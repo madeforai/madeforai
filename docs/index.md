@@ -10,17 +10,8 @@ hide:
 
 ---
 
-<style>
----
-title: Home
-description: Master the GenAI Frontier - The definitive guide to Generative AI engineering. From prompt engineering basics to scalable architecture optimization for enterprise.
-keywords: generative AI, AI engineering, machine learning, deep learning, transformers, LLMs, prompt engineering, AI architecture, neural networks, AI education, AI tutorials, AI courses
-hide:
-  - navigation
-  - toc
-  - path
 
----
+
 
 <!-- Main Content Wrapper to ensure rendering -->
 <div class="main-content-wrapper">
