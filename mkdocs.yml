@@ -98,6 +98,7 @@ extra_css:
   - stylesheets/css/extra.css
   - stylesheets/css/custom.css
   - stylesheets/notebook-enhanced.css
+  - stylesheets/css/index-custom.css
   - stylesheets/css/page-loader.css
 
 extra_javascript:
@@ -188,13 +189,13 @@ plugins:
           - remove_output
         remove_input_tags:
           - remove_input
-  - git-revision-date-localized:
-      enable_creation_date: false
-      enabled: true
-      type: date
-      fallback_to_build_date: true
-      exclude:
-        - index.md
+  # - git-revision-date-localized:
+  #     enable_creation_date: false
+  #     enabled: true
+  #     type: date
+  #     fallback_to_build_date: true
+  #     exclude:
+  #       - index.md
 
   - glightbox:
       touchNavigation: true
