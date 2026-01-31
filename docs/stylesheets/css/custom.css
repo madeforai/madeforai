@@ -1120,6 +1120,8 @@ html .md-tabs {
     max-height: 100% !important;
     overflow-y: auto !important;
     overflow-x: hidden !important;
+    padding-bottom: 3rem !important;
+    /* Added bottom padding for breathing room */
 }
 
 /* Adjust sidebar position when navbar is compact (scrolled) */
@@ -1130,9 +1132,10 @@ html .md-tabs {
     max-height: calc(100vh - 2.5rem) !important;
 }
 
-/* Sidebar inner padding - reduced */
+/* Sidebar inner padding - optimized */
 .md-sidebar__inner {
-    padding: 1rem 0;
+    padding: 1.5rem 0 5rem 0 !important;
+    /* Significant bottom padding for better accessibility */
 }
 
 /* Sidebar typography improvements - smaller and tighter */
@@ -1905,4 +1908,138 @@ body[data-md-path="contributing/"] .md-header--shadow~.md-main .md-content {
 .md-source-file {
     display: none !important;
     visibility: hidden !important;
+}
+
+
+/* ============================================
+   ENHANCED SIDEBAR STYLING - BEAUTIFUL & DYNAMIC
+   ============================================ */
+
+/* Sidebar icons styling */
+.sidebar-icon {
+    display: inline-block;
+    margin-right: 0.5rem;
+    font-size: 1rem;
+    vertical-align: middle;
+}
+
+/* Chapter number styling */
+.chapter-number {
+    display: inline-block;
+    min-width: 2.5rem;
+    font-weight: 700;
+    color: #3b82f6;
+    margin-right: 0.5rem;
+}
+
+.chapter-title {
+    color: #475569;
+}
+
+/* Progress indicator in sidebar */
+.sidebar-progress {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: #ffffff;
+    padding-bottom: 0.5rem;
+}
+
+/* Smooth scrolling for sidebar */
+.md-sidebar--primary {
+    scroll-behavior: smooth;
+}
+
+/* Enhanced hover states for navigation */
+.md-nav__link {
+    position: relative;
+    overflow: hidden;
+}
+
+.md-nav__link::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 3px;
+    background: #3b82f6;
+    transform: scaleY(0);
+    transition: transform 0.2s ease;
+}
+
+.md-nav__link:hover::before {
+    transform: scaleY(1);
+}
+
+/* Active link with gradient */
+.md-nav__link--active {
+    background: linear-gradient(90deg, #dbeafe 0%, #bfdbfe 100%) !important;
+    color: #1e40af !important;
+    font-weight: 700 !important;
+    box-shadow: 0 2px 4px rgba(59, 130, 246, 0.1);
+}
+
+.md-nav__link--active::before {
+    transform: scaleY(1);
+}
+
+/* Module headers with better visual hierarchy */
+.md-nav__item--nested>.md-nav__link {
+    background: linear-gradient(90deg, #f0f9ff 0%, transparent 100%);
+    border-left: 3px solid #3b82f6;
+    padding-left: 0.75rem !important;
+    margin-bottom: 0.5rem;
+}
+
+/* Collapsible sections indicator */
+.md-nav__item--nested>.md-nav__link::after {
+    content: '▼';
+    position: absolute;
+    right: 0.75rem;
+    font-size: 0.625rem;
+    color: #94a3b8;
+    transition: transform 0.2s ease;
+}
+
+.md-nav__item--active>.md-nav__link::after {
+    transform: rotate(180deg);
+}
+
+/* Nested navigation indentation */
+.md-nav .md-nav {
+    padding-left: 0.5rem;
+}
+
+/* Scrollbar styling for sidebar */
+.md-sidebar--primary::-webkit-scrollbar {
+    width: 6px;
+}
+
+.md-sidebar--primary::-webkit-scrollbar-track {
+    background: #f1f5f9;
+}
+
+.md-sidebar--primary::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 3px;
+}
+
+.md-sidebar--primary::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+/* Mobile sidebar improvements */
+@media (max-width: 768px) {
+    .md-sidebar--primary {
+        top: 5rem !important;
+        height: calc(100vh - 5rem) !important;
+        max-height: calc(100vh - 5rem) !important;
+    }
+
+    .md-header--shadow~.md-container .md-sidebar--primary {
+        top: 2.25rem !important;
+        height: calc(100vh - 2.25rem) !important;
+        max-height: calc(100vh - 2.25rem) !important;
+    }
 }

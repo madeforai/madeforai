@@ -515,7 +515,7 @@ description: {config['subtitle']}
 
 def on_pre_build(config):
     """Hook that runs before the build starts"""
-    docs_dir = config['docs_dir']
+    docs_dir = Path(config['docs_dir'])
     
     logger.info("Generating learning path pages...")
     
@@ -526,9 +526,19 @@ def on_pre_build(config):
         # Generate page content
         page_content = generate_path_page(path_slug, path_config, modules)
         
-        # Write to index.md
-        index_path = Path(docs_dir) / 'paths' / path_slug / 'index.md'
+        # Write to index.md ONLY if content changed
+        index_path = docs_dir / 'paths' / path_slug / 'index.md'
         if index_path.parent.exists():
-            with open(index_path, 'w', encoding='utf-8') as f:
-                f.write(page_content)
-            logger.info(f"Generated {path_slug}/index.md with {len(modules)} modules")
+            should_write = True
+            if index_path.exists():
+                with open(index_path, 'r', encoding='utf-8') as f:
+                    old_content = f.read()
+                if old_content == page_content:
+                    should_write = False
+            
+            if should_write:
+                with open(index_path, 'w', encoding='utf-8') as f:
+                    f.write(page_content)
+                logger.info(f"Generated {path_slug}/index.md with {len(modules)} modules")
+            else:
+                logger.info(f"Skipping {path_slug}/index.md (no changes)")

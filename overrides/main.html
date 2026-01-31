@@ -5,6 +5,15 @@
 {% endblock %}
 
 {% block extrahead %}
+<!-- Google tag (gtag.js) - Must be in head for Google to detect -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GFX72HCYMH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-GFX72HCYMH');
+</script>
+
 <!-- Include comprehensive meta tags -->
 {% include "partials/meta.html" %}
 

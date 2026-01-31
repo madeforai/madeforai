@@ -236,17 +236,69 @@ description: Build a solid foundation in AI fundamentals
     <div class="module-card">
         <div class="module-header">
             <div class="module-number">1</div>
-            <h3 class="module-title">1 - Foundations</h3>
+            <h3 class="module-title">1 - Ai Foundations</h3>
             
         </div>
         <div class="chapter-list">
-            <a href="module-1-foundations/1.1-ai-ml-intro" class="chapter-link">
+            <a href="module-1-AI-Foundations/1.1-what-is-ai" class="chapter-link">
                 <span class="material-symbols-outlined">play_circle</span>
-                <span>1.1 - Introduction to AI, ML, and Deep Learning</span>
+                <span>1.1 - What is Artificial Intelligence?</span>
             </a>
-            <a href="module-1-foundations/1.2-first-neural-network" class="chapter-link">
+            <a href="module-1-AI-Foundations/1.2-ai-landscape" class="chapter-link">
                 <span class="material-symbols-outlined">play_circle</span>
-                <span>1.2 - Your First Neural Network</span>
+                <span>1.2 - The AI Landscape: From Narrow to General AI</span>
+            </a>
+            <a href="module-1-AI-Foundations/1.3-how-machines-learn" class="chapter-link">
+                <span class="material-symbols-outlined">play_circle</span>
+                <span>1.3 - How Machines Learn: Core Concepts</span>
+            </a>
+            <a href="module-1-AI-Foundations/1.4-first-ai-model" class="chapter-link">
+                <span class="material-symbols-outlined">play_circle</span>
+                <span>1.4 - Your First AI Model</span>
             </a></div>
+    </div>
+    <div class="module-card">
+        <div class="module-header">
+            <div class="module-number">2</div>
+            <h3 class="module-title">2 - Machine Learning Fundamentals</h3>
+            
+        </div>
+        <div class="chapter-list">
+            <a href="module-2-Machine-Learning-Fundamentals/2.1-supervised-learning" class="chapter-link">
+                <span class="material-symbols-outlined">play_circle</span>
+                <span>2.1 - Supervised Learning Essentials</span>
+            </a>
+            <a href="module-2-Machine-Learning-Fundamentals/2.2-classification-vs-regression" class="chapter-link">
+                <span class="material-symbols-outlined">play_circle</span>
+                <span>2.2 - Classification vs Regression: Choosing Your Weapon</span>
+            </a>
+            <a href="module-2-Machine-Learning-Fundamentals/2.3-unsupervised-clustering" class="chapter-link">
+                <span class="material-symbols-outlined">play_circle</span>
+                <span>2.3 - Unsupervised Learning & Clustering: Finding Hidden Patterns</span>
+            </a>
+            <a href="module-2-Machine-Learning-Fundamentals/2.4-model-evaluation" class="chapter-link">
+                <span class="material-symbols-outlined">play_circle</span>
+                <span>2.4 - Model Evaluation & Metrics: Measuring What Matters</span>
+            </a></div>
+    </div>
+    <div class="module-card">
+        <div class="module-header">
+            <div class="module-number">3</div>
+            <h3 class="module-title">3 - Neural Networks Demystified</h3>
+            
+        </div>
+        <div class="chapter-list">
+            <a href="module-3-Neural-Networks-Demystified/3.1-biological-neurons" class="chapter-link">
+                <span class="material-symbols-outlined">play_circle</span>
+                <span>3.1 - Biological Inspiration: How Neurons Work</span>
+            </a></div>
+    </div>
+    <div class="module-card">
+        <div class="module-header">
+            <div class="module-number">4</div>
+            <h3 class="module-title">4 - Modern Ai And Applications</h3>
+            
+        </div>
+        
     </div>
 </div>
