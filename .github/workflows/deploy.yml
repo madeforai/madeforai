@@ -40,10 +40,10 @@ jobs:
           path: |
             ~/.cache/pip
             .cache
-          key: ${{ runner.os }}-mkdocs-${{ hashFiles('**/requirements.txt') }}-${{ hashFiles('docs/**') }}
+          key: ${{ runner.os }}-mkdocs-v2-${{ hashFiles('**/requirements.txt') }}-${{ hashFiles('docs/**') }}
           restore-keys: |
-            ${{ runner.os }}-mkdocs-${{ hashFiles('**/requirements.txt') }}-
-            ${{ runner.os }}-mkdocs-
+            ${{ runner.os }}-mkdocs-v2-${{ hashFiles('**/requirements.txt') }}-
+            ${{ runner.os }}-mkdocs-v2-
       
       - name: Install dependencies
         run: |
