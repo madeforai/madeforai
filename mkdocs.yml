@@ -160,6 +160,11 @@ markdown_extensions:
       custom_checkbox: true
   - pymdownx.tilde
 
+exclude_docs: |
+  hooks/
+  *.py
+  __pycache__/
+
 plugins:
   - search:
       separator: '[\s\-,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
@@ -171,6 +176,10 @@ plugins:
       show_input: True
       include_requirejs: True
       theme: light
+      ignore:
+        - "*.py"
+        - "hooks/*.py"
+        - "**/__pycache__/**"
       remove_tag_config:
         remove_cell_tags:
           - remove_cell

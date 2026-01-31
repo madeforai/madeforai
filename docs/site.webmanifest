@@ -2,22 +2,16 @@
   "name": "MadeForAI - Master the GenAI Frontier",
   "short_name": "MadeForAI",
   "description": "The definitive guide to Generative AI engineering. From prompt engineering basics to scalable architecture optimization for enterprise.",
-  "start_url": "/",
+  "start_url": "/madeforai/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#FF6B35",
   "orientation": "portrait-primary",
   "icons": [
     {
-      "src": "/assets/android-chrome-192x192.png",
-      "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "any maskable"
-    },
-    {
-      "src": "/assets/android-chrome-512x512.png",
-      "sizes": "512x512",
-      "type": "image/png",
+      "src": "assets/logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
       "purpose": "any maskable"
     }
   ],

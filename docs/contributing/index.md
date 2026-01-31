@@ -168,14 +168,14 @@ hide:
     font-size: 0.8125rem;
     text-decoration: none;
     transition: all 0.2s ease;
-    background: #2463eb;
+    background: #0f172a;
     color: #ffffff;
 }
 
 .help-link:hover {
-    background: #1d4ed8;
+    background: #1e293b;
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(36, 99, 235, 0.3);
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.3);
     color: #ffffff;
 }
 
@@ -235,7 +235,9 @@ hide:
         
         <div class="code-block"><code># Clone and setup
 git clone https://github.com/YOUR-USERNAME/madeforai.git
+
 cd madeforai && python -m venv venv
+
 source venv/bin/activate && pip install -r requirements.txt
 
 # Start development server

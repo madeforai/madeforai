@@ -230,21 +230,6 @@ hide:
             Connect with AI enthusiasts, engineers, and researchers building the future together.
         </p>
         
-        <div class="stats-row">
-            <div class="stat">
-                <div class="stat-number">5,000+</div>
-                <div class="stat-label">Members</div>
-            </div>
-            <div class="stat">
-                <div class="stat-number">500+</div>
-                <div class="stat-label">GitHub Stars</div>
-            </div>
-            <div class="stat">
-                <div class="stat-number">100+</div>
-                <div class="stat-label">Contributors</div>
-            </div>
-        </div>
-        
         <div class="platforms-grid">
             <div class="platform-card">
                 <div class="platform-icon discord">

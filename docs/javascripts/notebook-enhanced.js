@@ -19,6 +19,51 @@
     }
     
     /**
+     * Fix code copy functionality for Jupyter notebooks
+     */
+    function fixNotebookCodeCopy() {
+        // Only run on notebook pages
+        if (!document.querySelector('.jp-Notebook')) return;
+        
+        // Find all code cells
+        const codeCells = document.querySelectorAll('.jp-CodeCell');
+        
+        codeCells.forEach(codeCell => {
+            // Find the pre element with properly formatted code
+            const preElement = codeCell.querySelector('.highlight-ipynb pre');
+            if (!preElement) return;
+            
+            // Find the clipboard-copy-txt div (the source for copying)
+            const copyTxtDiv = codeCell.querySelector('.clipboard-copy-txt');
+            if (!copyTxtDiv) return;
+            
+            // Get the properly formatted code from the pre element
+            let properCode = preElement.textContent.trim();
+            
+            // Replace the content of the clipboard-copy-txt div
+            copyTxtDiv.textContent = properCode;
+        });
+    }
+    
+    /**
+     * Fallback copy method for older browsers
+     */
+    function fallbackCopy(text) {
+        const textarea = document.createElement('textarea');
+        textarea.value = text;
+        textarea.style.position = 'fixed';
+        textarea.style.opacity = '0';
+        document.body.appendChild(textarea);
+        textarea.select();
+        try {
+            document.execCommand('copy');
+        } catch (err) {
+            console.error('Fallback copy failed:', err);
+        }
+        document.body.removeChild(textarea);
+    }
+    
+    /**
      * Sidebar toggle functionality
      */
     function initSidebarToggle() {
@@ -77,6 +122,7 @@
     // Initialize
     function init() {
         initSidebarToggle();
+        fixNotebookCodeCopy();
         
         // Remove old listener if exists
         if (resizeListener) {
