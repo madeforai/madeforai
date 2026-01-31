@@ -895,10 +895,8 @@ article {
     </div>
 </section>
 
-<!-- Newsletter & Social Section -->
 <section class="newsletter-social-section">
     <div class="newsletter-social-container">
-        <!-- Title Section -->
         <div class="newsletter-header">
             <h2 class="newsletter-main-title">
                 Stay ahead of the <span class="title-highlight">curve</span>
@@ -909,7 +907,6 @@ article {
             </p>
         </div>
         
-        <!-- Newsletter Form -->
         <form class="newsletter-signup-form" id="newsletter-form">
             <div class="newsletter-input-group">
                 <input 
@@ -932,12 +929,10 @@ article {
             </p>
         </form>
 
-        <!-- Divider -->
         <div class="section-divider">
             <span class="divider-text">Follow us on social media</span>
         </div>
 
-        <!-- Social Media Links -->
         <div class="social-icons-container">
             <a href="https://discord.gg/UycUrRfm" class="social-icon discord" title="Join our Discord" target="_blank" rel="noopener">
                 <svg viewBox="0 0 24 24" fill="currentColor">
