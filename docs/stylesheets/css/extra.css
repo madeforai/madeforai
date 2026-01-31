@@ -29,25 +29,7 @@
     --md-accent-fg-color: #3b82f6;
 }
 
-/* Notebook styling */
-.jp-Cell {
-    border-left: 3px solid var(--md-primary-fg-color);
-    padding-left: 1rem;
-    margin: 1.5rem 0;
-}
-
-.jp-InputArea {
-    background: #1e293b !important;
-    border-radius: 0.5rem;
-    overflow: hidden;
-}
-
-.jp-OutputArea {
-    background: #f8fafc;
-    border-radius: 0.5rem;
-    padding: 1rem;
-    margin-top: 0.5rem;
-}
+/* Notebook styling handled in notebook-enhanced.css */
 
 /* Enhanced admonitions */
 .md-typeset .admonition {
